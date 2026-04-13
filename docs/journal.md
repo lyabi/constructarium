@@ -32,3 +32,15 @@ Completed CSV → JSON conversion for all data files:
 **Visual design skeched.** Typography (Lora / Inter / JetBrains Mono), colour palette (warm neutrals + cluster-based colours), and layout grid documented. 
 
 **Open questions** documented: tech stack selection (framework vs. plain JS), graph library choice (D3-force / Cytoscape.js / vis-network), routing approach (SPA vs. multi-page), and isolated node layout strategy for inheritance graph.
+
+**Prototype implementation started.**
+- Built semantic HTML framework in `index.html`: header/nav, Home, Construction Index, Construction Details, Comparison View, Inheritance Network, Verb Explorer, About / Sources.
+- Expanded HTML from placeholders to a full static prototype with all construction detail articles and real content.
+- Added beginner-friendly inline comments in HTML for ARIA, landmarks, repeated lists, and structural wrappers.
+- Added base CSS in `css/style.css`: colour tokens, typography defaults, spacing, section panels, table styling.
+- Implemented project typography system: Lora for headings, Inter for body/UI text, JetBrains Mono for notation.
+- Styled major page areas step by step: navigation, reusable cards/lists, construction sections, comparison view, verb explorer, home, inheritance, responsive behavior, hover/focus states, and final visual polish.
+- Reorganized CSS comments into beginner-friendly numbered sections for easier explanation.
+- Added minimal JavaScript in `js/app.js` only where it was necessary for the prototype: interactive comparison switching and verb-set switching.
+- Upgraded key prototype areas to data-driven rendering from JSON: Comparison View, Verb Explorer, and Inheritance Network now load from files in `data/`.
+- Implemented a lightweight inheritance graph as inline SVG generated from `constructarium_inheritance.json` plus construction metadata.

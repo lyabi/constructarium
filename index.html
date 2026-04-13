@@ -169,7 +169,7 @@
             <article class="construction-card">
               <h3><a href="#detail-binominal-np-cxn">Binominal Noun Phrase Construction</a></h3>
               <p class="notation">Det1 N1 of Det2 N2</p>
-              <p>N1 evaluates N2</p>
+              <p>N₁ evaluates N₂</p>
             </article>
           </li>
         </ul>
@@ -498,7 +498,7 @@
         <p class="notation">Phrase structure: Det1 N1 of Det2 N2</p>
         <p class="notation">Syntactic function: not applicable for this NP-internal construction summary</p>
         <p>Meaning label: evaluation</p>
-        <p>Meaning description: N1 evaluates N2</p>
+        <p>Meaning description: N₁ evaluates N₂</p>
         <p>Notes: NP-internal construction; no clausal argument roles</p>
         <p>Key reference: tenWolde 2023</p>
         <p>No guided contrast pair is currently defined for this construction.</p>
@@ -526,13 +526,7 @@
         <aside aria-labelledby="comparison-pairs-title">
           <h2 id="comparison-pairs-title">Pairs</h2>
           <!-- List is appropriate because the user chooses from several parallel contrast pairs -->
-          <ul class="comparison-pair-list">
-            <li><a href="#comparison-pair-detail">transitive vs. caused motion</a></li>
-            <li><a href="#comparison-pair-detail">transitive vs. ditransitive</a></li>
-            <li><a href="#comparison-pair-detail">transitive vs. resultative</a></li>
-            <li><a href="#comparison-pair-detail">caused motion vs. resultative</a></li>
-            <li><a href="#comparison-pair-detail">ditransitive vs. caused motion</a></li>
-          </ul>
+          <ul class="comparison-pair-list" id="comparison-pair-list"></ul>
         </aside>
 
         <section id="comparison-pair-detail" aria-labelledby="comparison-pair-title">
@@ -542,23 +536,23 @@
           <div class="comparison-sentences">
             <article aria-labelledby="construction-a-title">
               <h3 id="construction-a-title">Transitive Construction</h3>
-              <p><a href="#detail-transitive-cxn">He sliced the bread.</a></p>
+              <p><a id="comparison-link-a" href="#detail-transitive-cxn">He sliced the bread.</a></p>
             </article>
 
             <article aria-labelledby="construction-b-title">
               <h3 id="construction-b-title">Caused Motion Construction</h3>
-              <p><a href="#detail-caused-motion-cxn">Pat sliced the carrots into the salad.</a></p>
+              <p><a id="comparison-link-b" href="#detail-caused-motion-cxn">Pat sliced the carrots into the salad.</a></p>
             </article>
           </div>
 
           <section aria-labelledby="contrast-type-title">
             <h3 id="contrast-type-title">Contrast Type</h3>
-            <p>transitive vs. caused motion</p>
+            <p id="comparison-contrast-type">transitive vs. caused motion</p>
           </section>
 
           <section aria-labelledby="contrast-explanation-title">
             <h3 id="contrast-explanation-title">Explanation</h3>
-            <p>
+            <p id="comparison-explanation">
               Same verb; transitive encodes simple action on a Patient with no
               specified endpoint; caused-motion adds a Goal PP, encoding the
               Theme's change of location as constructionally entailed.
@@ -585,22 +579,13 @@
 
       <section aria-labelledby="graph-area-title">
         <h2 id="graph-area-title">Graph Area</h2>
-        <p>
-          Interactive graph will be added in a later step. The current dataset
-          contains 12 nodes and 7 edges, with Resultative Construction linked to
-          two parents.
-        </p>
+        <div id="inheritance-graph" aria-label="Inheritance graph"></div>
       </section>
 
       <section aria-labelledby="standalone-constructions-title">
         <h2 id="standalone-constructions-title">Standalone Constructions</h2>
         <!-- Separate list for isolated constructions keeps them distinct from the graph area -->
-        <ul class="standalone-construction-list">
-          <li><a href="#detail-wxdy-cxn">What's X Doing Y? Construction</a></li>
-          <li><a href="#detail-incredulity-cxn">Incredulity Response Construction</a></li>
-          <li><a href="#detail-comparative-correlative-cxn">Comparative Correlative Construction</a></li>
-          <li><a href="#detail-binominal-np-cxn">Binominal Noun Phrase Construction</a></li>
-        </ul>
+        <ul class="standalone-construction-list" id="standalone-construction-list"></ul>
       </section>
     </section>
 
@@ -612,10 +597,7 @@
       <!-- Separate nav for switching between verb-set areas -->
       <nav aria-label="Verb sets">
         <!-- This list works as simple HTML-only set navigation for now -->
-        <ul class="verb-set-list">
-          <li><a href="#slice-set">slice</a></li>
-          <li><a href="#cook-set">cook</a></li>
-        </ul>
+        <ul class="verb-set-list" id="verb-set-list"></ul>
       </nav>
 
       <section id="slice-set" aria-labelledby="slice-set-title">
@@ -630,37 +612,11 @@
               <th scope="col">Source</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>He sliced the bread.</td>
-              <td><a href="#detail-transitive-cxn">Transitive Construction</a></td>
-              <td>Goldberg 2005</td>
-            </tr>
-            <tr>
-              <td>Pat sliced the carrots into the salad.</td>
-              <td><a href="#detail-caused-motion-cxn">Caused Motion Construction</a></td>
-              <td>Goldberg 2005</td>
-            </tr>
-            <tr>
-              <td>Pat sliced Chris a piece of pie.</td>
-              <td><a href="#detail-ditransitive-cxn">Ditransitive Construction</a></td>
-              <td>Goldberg 2005</td>
-            </tr>
-            <tr>
-              <td>Emeril sliced and diced his way to stardom.</td>
-              <td><a href="#detail-way-cxn">Way Construction</a></td>
-              <td>Goldberg 2005</td>
-            </tr>
-            <tr>
-              <td>Pat sliced the box open.</td>
-              <td><a href="#detail-resultative-cxn">Resultative Construction</a></td>
-              <td>Goldberg 2005</td>
-            </tr>
-          </tbody>
+          <tbody id="slice-set-body"></tbody>
         </table>
       </section>
 
-      <section id="cook-set" aria-labelledby="cook-set-title">
+      <section id="cook-set" aria-labelledby="cook-set-title" hidden>
         <h2 id="cook-set-title">cook</h2>
         <!-- second verb-set table for the cook set -->
         <table>
@@ -672,38 +628,7 @@
               <th scope="col">Source</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>The chicken cooked all night.</td>
-              <td><a href="#detail-intransitive-cxn">Intransitive Construction</a></td>
-              <td>Goldberg 2009</td>
-            </tr>
-            <tr>
-              <td>Pat cooked the steaks.</td>
-              <td><a href="#detail-transitive-cxn">Transitive Construction</a></td>
-              <td>Goldberg 2009</td>
-            </tr>
-            <tr>
-              <td>Pat cooked the steak well done.</td>
-              <td><a href="#detail-resultative-cxn">Resultative Construction</a></td>
-              <td>Goldberg 2009</td>
-            </tr>
-            <tr>
-              <td>Pat cooks. deprofiled object; verb is semantically transitive but object is implicit</td>
-              <td><a href="#detail-intransitive-cxn">Intransitive Construction</a></td>
-              <td>Goldberg 2009</td>
-            </tr>
-            <tr>
-              <td>Pat cooked Chris some dinner.</td>
-              <td><a href="#detail-ditransitive-cxn">Ditransitive Construction</a></td>
-              <td>Goldberg 2009</td>
-            </tr>
-            <tr>
-              <td>Pat cooked her way into the Illinois State bake-off.</td>
-              <td><a href="#detail-way-cxn">Way Construction</a></td>
-              <td>Goldberg 2009</td>
-            </tr>
-          </tbody>
+          <tbody id="cook-set-body"></tbody>
         </table>
       </section>
     </section>
@@ -723,20 +648,15 @@
       <section aria-labelledby="sources-title">
         <h2 id="sources-title">References</h2>
         <!-- References naturally form a list and will later be populated from the data file -->
-        <ul class="reference-list">
-          <li>Davies, M. (2008-). The Corpus of Contemporary American English (COCA).</li>
-          <li>Goldberg, A. E. (1995). Constructions: A Construction Grammar Approach to Argument Structure.</li>
-          <li>Goldberg, A. E. (2005). Constructions at Work: The Nature of Generalization in Language.</li>
-          <li>Goldberg, A. E. (2009). The nature of generalization in language.</li>
-          <li>Hoffmann, T., Brunner, T. and Horsch, J. (2020). English comparative correlative constructions: a usage-based account.</li>
-          <li>Hoffmann, T. and Trousdale, G. (eds.) (2013). The Oxford Handbook of Construction Grammar.</li>
-          <li>Jackendoff, R. (1997). Twistin' the Night Away.</li>
-          <li>Kay, P. and Fillmore, C. J. (1999). Grammatical Constructions and Linguistic Generalizations: The What's X Doing Y? Construction.</li>
-          <li>Lambrecht, K. (1990). What, me worry? - Mad Magazine Sentences Revisited.</li>
-          <li>tenWolde, E. (2023). The English Binominal Noun Phrase: A Cognitive-Functional Approach.</li>
-        </ul>
+        <ul class="reference-list" id="reference-list"></ul>
       </section>
     </section>
   </main>
+
+  <footer>
+    <a href="imprint.html">Imprint</a>
+  </footer>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
