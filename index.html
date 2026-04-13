@@ -4,8 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Constructarium</title>
+  <!-- Load the three project fonts before the stylesheet uses them for role-based typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- First CSS step: link one base stylesheet before adding more specific component styling -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Skip link lets keyboard users jump past the repeated navigation -->
+  <a class="skip-link" href="#home">Skip to main content</a>
   <header>
     <!-- aria-label gives this nav an accessible name because it has no visible heading -->
     <nav aria-label="Primary">
@@ -55,42 +63,42 @@
           <li>
             <article class="construction-card">
               <h3><a href="#detail-intransitive-cxn">Intransitive Construction</a></h3>
-              <p>NP VP</p>
+              <p class="notation">NP VP</p>
               <p>X acts</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
               <h3><a href="#detail-transitive-cxn">Transitive Construction</a></h3>
-              <p>NP VP NP</p>
+              <p class="notation">NP VP NP</p>
               <p>X acts on Y</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
               <h3><a href="#detail-ditransitive-cxn">Ditransitive Construction</a></h3>
-              <p>NP VP NP NP</p>
+              <p class="notation">NP VP NP NP</p>
               <p>X causes Y to receive Z</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
               <h3><a href="#detail-caused-motion-cxn">Caused Motion Construction</a></h3>
-              <p>NP V NP PP</p>
+              <p class="notation">NP V NP PP</p>
               <p>X causes Y to move Z</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
               <h3><a href="#detail-resultative-cxn">Resultative Construction</a></h3>
-              <p>NP V NP XP</p>
+              <p class="notation">NP V NP XP</p>
               <p>X causes Y to become Z</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
               <h3><a href="#detail-passive-cxn">Passive Construction</a></h3>
-              <p>NP aux V (by NP)</p>
+              <p class="notation">NP aux V (by NP)</p>
               <p>to make undergoer topical and/or actor non-topical</p>
             </article>
           </li>
@@ -104,14 +112,14 @@
           <li>
             <article class="construction-card">
               <h3><a href="#detail-way-cxn">Way Construction</a></h3>
-              <p>NP V NP.poss way PP</p>
+              <p class="notation">NP V NP.poss way PP</p>
               <p>X moves to a goal by means of or despite the action denoted by V</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
               <h3><a href="#detail-time-away-cxn">Time Away Construction</a></h3>
-              <p>NP V NP.poss time away</p>
+              <p class="notation">NP V NP.poss time away</p>
               <p>X spends or wastes a time period doing the action denoted by V</p>
             </article>
           </li>
@@ -125,14 +133,14 @@
           <li>
             <article class="construction-card">
               <h3><a href="#detail-wxdy-cxn">What's X Doing Y? Construction</a></h3>
-              <p>What be NP VP[doing XP]</p>
+              <p class="notation">What be NP VP[doing XP]</p>
               <p>Speaker signals that something is out of place or disapproved of</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
               <h3><a href="#detail-incredulity-cxn">Incredulity Response Construction</a></h3>
-              <p>NP[acc] NP?</p>
+              <p class="notation">NP[acc] NP?</p>
               <p>Speaker expresses disbelief about an identification or attribution</p>
             </article>
           </li>
@@ -146,7 +154,7 @@
           <li>
             <article class="construction-card">
               <h3><a href="#detail-comparative-correlative-cxn">Comparative Correlative Construction</a></h3>
-              <p>the Comp-XP1, the Comp-XP2</p>
+              <p class="notation">the Comp-XP1, the Comp-XP2</p>
               <p>linked independent and dependent variables</p>
             </article>
           </li>
@@ -160,8 +168,8 @@
           <li>
             <article class="construction-card">
               <h3><a href="#detail-binominal-np-cxn">Binominal Noun Phrase Construction</a></h3>
-              <p>Det1 N1 of Det2 N2</p>
-              <p>N₁ evaluates N₂</p>
+              <p class="notation">Det1 N1 of Det2 N2</p>
+              <p>N1 evaluates N2</p>
             </article>
           </li>
         </ul>
@@ -193,8 +201,8 @@
       <article id="detail-intransitive-cxn" aria-labelledby="detail-intransitive-cxn-title">
         <h2 id="detail-intransitive-cxn-title">Intransitive Construction</h2>
         <p>No alternative names listed.</p>
-        <p>Phrase structure: NP VP</p>
-        <p>Syntactic function: Subj V</p>
+        <p class="notation">Phrase structure: NP VP</p>
+        <p class="notation">Syntactic function: Subj V</p>
         <p>Meaning label: action</p>
         <p>Meaning description: X acts</p>
         <p>No notes listed.</p>
@@ -220,8 +228,8 @@
       <article id="detail-transitive-cxn" aria-labelledby="detail-transitive-cxn-title">
         <h2 id="detail-transitive-cxn-title">Transitive Construction</h2>
         <p>No alternative names listed.</p>
-        <p>Phrase structure: NP VP NP</p>
-        <p>Syntactic function: Subj V Obj</p>
+        <p class="notation">Phrase structure: NP VP NP</p>
+        <p class="notation">Syntactic function: Subj V Obj</p>
         <p>Meaning label: transitive action</p>
         <p>Meaning description: X acts on Y</p>
         <p>No notes listed.</p>
@@ -253,8 +261,8 @@
       <article id="detail-ditransitive-cxn" aria-labelledby="detail-ditransitive-cxn-title">
         <h2 id="detail-ditransitive-cxn-title">Ditransitive Construction</h2>
         <p>Alternative name: Double Object Construction</p>
-        <p>Phrase structure: NP VP NP NP</p>
-        <p>Syntactic function: Subj V Obj1 Obj2</p>
+        <p class="notation">Phrase structure: NP VP NP NP</p>
+        <p class="notation">Syntactic function: Subj V Obj1 Obj2</p>
         <p>Meaning label: transfer (intended or actual)</p>
         <p>Meaning description: X causes Y to receive Z</p>
         <p>No notes listed.</p>
@@ -282,8 +290,8 @@
       <article id="detail-caused-motion-cxn" aria-labelledby="detail-caused-motion-cxn-title">
         <h2 id="detail-caused-motion-cxn-title">Caused Motion Construction</h2>
         <p>No alternative names listed.</p>
-        <p>Phrase structure: NP V NP PP</p>
-        <p>Syntactic function: Subj V Obj Obl</p>
+        <p class="notation">Phrase structure: NP V NP PP</p>
+        <p class="notation">Syntactic function: Subj V Obj Obl</p>
         <p>Meaning label: caused motion</p>
         <p>Meaning description: X causes Y to move Z</p>
         <p>No notes listed.</p>
@@ -313,8 +321,8 @@
       <article id="detail-resultative-cxn" aria-labelledby="detail-resultative-cxn-title">
         <h2 id="detail-resultative-cxn-title">Resultative Construction</h2>
         <p>No alternative names listed.</p>
-        <p>Phrase structure: NP V NP XP</p>
-        <p>Syntactic function: Subj V Obj Xcomp</p>
+        <p class="notation">Phrase structure: NP V NP XP</p>
+        <p class="notation">Syntactic function: Subj V Obj Xcomp</p>
         <p>Meaning label: caused change of state</p>
         <p>Meaning description: X causes Y to become Z</p>
         <p>No notes listed.</p>
@@ -329,7 +337,7 @@
         <ul class="example-list">
           <li><blockquote><p>The river froze solid.</p></blockquote><p>Annotation: intransitive resultative; Subject = Theme; result XP = solid</p><p>Goldberg 1995</p></li>
           <li><blockquote><p>The tools were wiped clean.</p></blockquote><p>Annotation: passive resultative; result XP = clean</p><p>Goldberg 1995</p></li>
-          <li><blockquote><p>I had brushed my hair very smooth.</p></blockquote><p>Goldberg 1995</p><p>Ch. Bronte 1847, Jane Eyre, p. 107</p></li>
+          <li><blockquote><p>I had brushed my hair very smooth.</p></blockquote><p>Goldberg 1995</p><p>Charlotte Bronte 1847, Jane Eyre, p. 107</p></li>
           <li><blockquote><p>Whose whole life is to eat, and drink...and laugh themselves fat.</p></blockquote><p>Annotation: reflexive object; result XP = fat</p><p>Goldberg 1995</p><p>OED 1947, Trapp, Comm. and Epist. and Rev.</p></li>
           <li><blockquote><p>She cried herself to sleep.</p></blockquote><p>Annotation: reflexive object; Agent = Theme; result XP = to sleep</p><p>Goldberg 1995</p></li>
         </ul>
@@ -343,8 +351,8 @@
       <article id="detail-passive-cxn" aria-labelledby="detail-passive-cxn-title">
         <h2 id="detail-passive-cxn-title">Passive Construction</h2>
         <p>No alternative names listed.</p>
-        <p>Phrase structure: NP aux V (by NP)</p>
-        <p>Syntactic function: Subj aux VPpp (PPby)</p>
+        <p class="notation">Phrase structure: NP aux V (by NP)</p>
+        <p class="notation">Syntactic function: Subj aux VPpp (PPby)</p>
         <p>Meaning label: discourse-pragmatic</p>
         <p>Meaning description: to make undergoer topical and/or actor non-topical</p>
         <p>No notes listed.</p>
@@ -369,8 +377,8 @@
       <article id="detail-way-cxn" aria-labelledby="detail-way-cxn-title">
         <h2 id="detail-way-cxn-title">Way Construction</h2>
         <p>No alternative names listed.</p>
-        <p>Phrase structure: NP V NP.poss way PP</p>
-        <p>Syntactic function: Subj V Obj[way] Obl</p>
+        <p class="notation">Phrase structure: NP V NP.poss way PP</p>
+        <p class="notation">Syntactic function: Subj V Obj[way] Obl</p>
         <p>Meaning label: self-propelled motion</p>
         <p>Meaning description: X moves to a goal by means of or despite the action denoted by V</p>
         <p>No notes listed.</p>
@@ -397,8 +405,8 @@
       <article id="detail-time-away-cxn" aria-labelledby="detail-time-away-cxn-title">
         <h2 id="detail-time-away-cxn-title">Time Away Construction</h2>
         <p>No alternative names listed.</p>
-        <p>Phrase structure: NP V NP.poss time away</p>
-        <p>Syntactic function: Subj V Obj[time] Obl[away]</p>
+        <p class="notation">Phrase structure: NP V NP.poss time away</p>
+        <p class="notation">Syntactic function: Subj V Obj[time] Obl[away]</p>
         <p>Meaning label: temporal expenditure</p>
         <p>Meaning description: X spends or wastes a time period doing the action denoted by V</p>
         <p>No notes listed.</p>
@@ -421,8 +429,8 @@
       <article id="detail-wxdy-cxn" aria-labelledby="detail-wxdy-cxn-title">
         <h2 id="detail-wxdy-cxn-title">What's X Doing Y? Construction</h2>
         <p>No alternative names listed.</p>
-        <p>Phrase structure: What be NP VP[doing XP]</p>
-        <p>Syntactic function: Subj aux Obj Pred</p>
+        <p class="notation">Phrase structure: What be NP VP[doing XP]</p>
+        <p class="notation">Syntactic function: Subj aux Obj Pred</p>
         <p>Meaning label: incongruity/disapproval</p>
         <p>Meaning description: Speaker signals that something is out of place or disapproved of</p>
         <p>No notes listed.</p>
@@ -443,8 +451,8 @@
       <article id="detail-incredulity-cxn" aria-labelledby="detail-incredulity-cxn-title">
         <h2 id="detail-incredulity-cxn-title">Incredulity Response Construction</h2>
         <p>Alternative name: Mad Magazine Construction</p>
-        <p>Phrase structure: NP[acc] NP?</p>
-        <p>Syntactic function: NP Pred NP</p>
+        <p class="notation">Phrase structure: NP[acc] NP?</p>
+        <p class="notation">Syntactic function: NP Pred NP</p>
         <p>Meaning label: incredulity</p>
         <p>Meaning description: Speaker expresses disbelief about an identification or attribution</p>
         <p>No notes listed.</p>
@@ -465,8 +473,8 @@
       <article id="detail-comparative-correlative-cxn" aria-labelledby="detail-comparative-correlative-cxn-title">
         <h2 id="detail-comparative-correlative-cxn-title">Comparative Correlative Construction</h2>
         <p>Alternative names: The Xer the Yer Construction; Covariational Conditional Construction; Proportional Correlative</p>
-        <p>Phrase structure: the Comp-XP1, the Comp-XP2</p>
-        <p>Syntactic function: not applicable for this non-clausal construction summary</p>
+        <p class="notation">Phrase structure: the Comp-XP1, the Comp-XP2</p>
+        <p class="notation">Syntactic function: not applicable for this non-clausal construction summary</p>
         <p>Meaning label: correlated scales</p>
         <p>Meaning description: linked independent and dependent variables</p>
         <p>Notes: biclausal; clause-combining level exceeds scope of syntactic_function column</p>
@@ -487,8 +495,8 @@
       <article id="detail-binominal-np-cxn" aria-labelledby="detail-binominal-np-cxn-title">
         <h2 id="detail-binominal-np-cxn-title">Binominal Noun Phrase Construction</h2>
         <p>Alternative name: That Fool of a Doctor Construction</p>
-        <p>Phrase structure: Det1 N1 of Det2 N2</p>
-        <p>Syntactic function: not applicable for this NP-internal construction summary</p>
+        <p class="notation">Phrase structure: Det1 N1 of Det2 N2</p>
+        <p class="notation">Syntactic function: not applicable for this NP-internal construction summary</p>
         <p>Meaning label: evaluation</p>
         <p>Meaning description: N1 evaluates N2</p>
         <p>Notes: NP-internal construction; no clausal argument roles</p>
