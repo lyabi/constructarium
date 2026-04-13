@@ -17,7 +17,8 @@ This document walks through every line of `index.html` and `css/style.css` so yo
    - [Inheritance Network](#18-inheritance-network-lines-566-590)
    - [Verb Explorer](#19-verb-explorer-lines-593-634)
    - [About and Sources](#110-about-and-sources-lines-637-653)
-   - [The script tag](#111-the-script-tag-line-655)
+   - [The footer](#111-the-footer)
+   - [The script tag](#112-the-script-tag)
 2. [The CSS Stylesheet](#2-the-css-stylesheet)
    - [Section 1 — Design Tokens](#21-section-1--design-tokens)
    - [Section 2 — Global Reset and Base Styles](#22-section-2--global-reset-and-base-styles)
@@ -408,7 +409,21 @@ Empty in the HTML. JavaScript will inject list items from the data file. *(Will 
 
 ---
 
-### 1.11 The script tag (line 655)
+### 1.11 The footer
+
+```html
+<footer>
+  <a href="imprint.html">Imprint</a>
+</footer>
+```
+
+`<footer>` is a semantic landmark element, just like `<header>`. It marks the bottom of the page and typically contains secondary information such as legal notices, copyright, or contact links. Placing it after `</main>` and before `<script>` means it is the last visible content on the page.
+
+The single `<a href="imprint.html">` link navigates to a separate `imprint.html` file — unlike the navigation links in the header, which all use `#anchor` links within the same page. The CSS gives the footer a top border and small secondary-colour text so it reads as clearly subordinate to the main content.
+
+---
+
+### 1.12 The script tag
 
 ```html
 <script src="js/app.js"></script>
@@ -527,13 +542,23 @@ When a browser scrolls to an anchor (e.g. `#home`), it aligns the element exactl
 
 ```css
 header,
-main {
+main,
+footer {
   width: min(1200px, calc(100% - 2rem));
   margin: 0 auto;
 }
+
+footer {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
 ```
 
-This centers the page content with a maximum width. `min(1200px, calc(100% - 2rem))` means: use whichever value is smaller — 1200px or the full viewport width minus 2rem of padding. On a wide screen the content is capped at 1200px. On a narrow screen it fills the available width with a 1rem margin on each side. `margin: 0 auto` centers the element horizontally when it is narrower than the viewport.
+`header`, `main`, and `footer` all share the same centering rule so every layer of the page aligns to the same column width. `min(1200px, calc(100% - 2rem))` means: use whichever value is smaller — 1200px or the full viewport width minus 2rem of padding. On a wide screen the content is capped at 1200px. On a narrow screen it fills the available width with a 1rem margin on each side. `margin: 0 auto` centers the element horizontally when it is narrower than the viewport.
+
+The footer gets its own additional rules: `border-top` draws a separator line between the main content and the footer. `font-size: 0.875rem` makes the footer text slightly smaller than body text (14px vs 16px). `color: var(--text-secondary)` uses the grey tone so the imprint link reads as background information rather than primary content.
 
 ```css
 h1, h2, h3 {
@@ -759,20 +784,18 @@ All the custom list types have their default browser styles removed. `margin: 0`
   gap: 1rem;
 }
 .entry-point-list {
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
 }
 .construction-card-list {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 ```
 
-**CSS Grid** creates the responsive card layouts. `display: grid` on the `<ul>` makes its `<li>` children grid items. `gap: 1rem` adds space between cards.
+**CSS Grid** creates the card layouts. `display: grid` on the `<ul>` makes its `<li>` children grid items. `gap: 1rem` adds space between cards.
 
-`grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))` is a responsive pattern that needs no media queries:
-- `minmax(180px, 1fr)` — each column is at least 180px wide and grows to fill available space equally.
-- `repeat(auto-fit, ...)` — the browser creates as many columns as will fit in the container at the minimum size.
+`.entry-point-list` uses `repeat(4, 1fr)` — exactly 4 equal columns, one per entry-point card. This guarantees all four cards (Comparison View, Construction Index, Inheritance Network, Verb Explorer) always sit in one row at the same height. The responsive rule at 680px overrides this to `1fr` so the cards stack on mobile.
 
-On a wide screen with 4 entry-point cards, you get 4 columns. On a narrow screen where only 2 fit, you get 2 columns. On a phone you get 1 column. No JavaScript, no media queries needed for this behaviour.
+`.construction-card-list` uses `repeat(auto-fit, minmax(220px, 1fr))` — a responsive pattern that needs no media queries. Each column is at least 220px wide and grows to fill space equally. The browser creates as many columns as fit: on a wide screen you get 5–6 per row, on a narrow screen fewer.
 
 ```css
 .entry-point-card,
@@ -943,15 +966,6 @@ Annotation notes inside table cells are smaller and greyer than the sentence tex
 The home entry-point cards use a vertical gradient instead of a flat colour. The gradient goes from near-white at the top (`#fffdf9`) to a slightly warmer, more saturated tone at the bottom (`#f7f2ea`). `min-height: 100%` ensures cards in the same grid row are the same height (the grid already stretches them, but `min-height: 100%` keeps this working as content grows).
 
 ```css
-#home .entry-point-card:first-child {
-  box-shadow: inset 0 0 0 2px rgba(47, 79, 111, 0.18),
-              0 1px 2px rgba(28, 27, 24, 0.04);
-}
-```
-
-The first entry-point card (Compare) gets an extra inset box-shadow — a semi-transparent accent-coloured inner border. This gives the primary feature card a subtle emphasis. `inset` draws the shadow inside the element rather than outside. `0 0 0 2px` means no x-offset, no y-offset, no blur, 2px spread — this creates a sharp inner border effect.
-
-```css
 #inheritance-graph {
   min-height: 220px;
   padding: 1rem;
@@ -1038,7 +1052,7 @@ The two-column sentence comparison becomes one column on phones. The two article
 }
 ```
 
-All grid layouts become single-column. Even though the `auto-fit` grids already adapt, forcing `1fr` at 680px ensures nothing tries to show two narrow columns.
+All grid layouts become single-column. `.entry-point-list` normally shows a fixed 4-column row; this rule overrides it for phones. `.construction-card-list` already adapts via `auto-fit`, but the override makes the behaviour explicit and reliable at this breakpoint.
 
 ```css
 th, td {
@@ -1053,4 +1067,4 @@ Table cell padding is reduced from `0.75rem` to `0.6rem` to save space. The 50% 
 
 ---
 
-*End of tutorial. Last updated April 2026.*
+*End of tutorial. Last updated April 2026 (revised: footer added, entry-point grid fixed to 4 columns, Comparison View card emphasis removed).*
