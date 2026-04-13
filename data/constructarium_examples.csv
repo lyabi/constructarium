@@ -1,0 +1,50 @@
+﻿id;construction_id;sentence;annotation;source;corpus_ref
+ex_1;intransitive_cxn;These things happen.;;COCA;COCA 2016, NEWS, Charlotte Observer
+ex_2;intransitive_cxn;His phone rang.;;COCA;COCA 2018, SPOK, NBC_Dateline
+ex_3;intransitive_cxn;PrimeTime continues.;;COCA;COCA 1997, SPOK, ABC_Primetime
+ex_4;intransitive_cxn;People die.;;COCA;COCA 1995, TV, Babylon 5
+ex_5;intransitive_cxn;My heart sank.;"unaccusative; Subject = Theme";COCA;COCA 2019, FIC, SouthernRev
+ex_6;transitive_cxn;I read this book.;;COCA;COCA 1993, TV, Homicide: Life on the Street 
+ex_7;transitive_cxn;Open this door.;;COCA;COCA 2019, FIC, Analog
+ex_8;transitive_cxn;We play the game the right way.;;COCA;COCA 2012, WEB, sports.yahoo.com
+ex_9;transitive_cxn;Don't eat the cake.;;COCA;COCA 2004, SPOK, NPR_Daybreak
+ex_10;transitive_cxn;He bought a house for more than two million dollars.;Subj V Obj [adjunct PP];COCA;COCA 2012, BLOG, gossipcop.com
+ex_11;ditransitive_cxn;Sally baked her sister a cake.;;Goldberg 1995;
+ex_12;ditransitive_cxn;Joe painted Sally a picture.;;Goldberg 1995;
+ex_13;ditransitive_cxn;Bob told Joe a story.;;Goldberg 1995;
+ex_14;ditransitive_cxn;Joe gave Mary a sweater with a hole in it;;Goldberg 1995;
+ex_15;ditransitive_cxn;Sally gave Bill a headache.;"abstract Theme; metaphorical transfer";Goldberg 1995;
+ex_16;caused_motion_cxn;They laughed the poor guy out of the room.;"intransitive verb coerced into caused-motion; Agent V Theme Goal";Goldberg 1995;
+ex_17;caused_motion_cxn;Frank sneezed the tissue off the table.;"intransitive verb coerced; Agent V Theme Source";Goldberg 1995;
+ex_18;caused_motion_cxn;Mary urged Bill into the house.;"verb of instigation; Agent V Theme Goal";Goldberg 1995;
+ex_19;caused_motion_cxn;Sue let the water out of the bathtub.;;Goldberg 1995;
+ex_20;caused_motion_cxn;Sam helped him into the car.;;Goldberg 1995;
+ex_21;caused_motion_cxn;They sprayed the paint onto the wall.;;Goldberg 1995;
+ex_22;resultative_cxn; The river froze solid.;"intransitive resultative; Subject = Theme; result XP = solid";Goldberg 1995;
+ex_23;resultative_cxn;The tools were wiped clean.;"passive resultative; result XP = clean";Goldberg 1995;
+ex_24;resultative_cxn;I had brushed my hair very smooth. ;;Goldberg 1995;Ch. Bronte 1847, Jane Eyre 107
+ex_25;resultative_cxn;Whose whole life is to eat, and drink...and laugh themselves fat.;"reflexive object; result XP = fat";Goldberg 1995;OED 1947 Trapp, Comm, and Epist. and Rev.
+ex_26;resultative_cxn;She cried herself to sleep.;"reflexive object; Agent = Theme; result XP = to sleep";Goldberg 1995;
+ex_27;passive_cxn;The armadillo was hit by a car. ;;Goldberg 2005;
+ex_28;passive_cxn;America was founded by outsiders.;;COCA;COCA 2013, SPOK, Fox: The Five
+ex_29;passive_cxn;Jesus was born during the reign of Herod.;agentless passive;COCA;
+ex_30;passive_cxn; Participants were asked about their current and primary position responsibilities.;;COCA;COCA 2015, ACAD, LibraryResources
+ex_31;passive_cxn;Typically, these kinds of decisions are made by local officials;;COCA;COCA 2010, SPOK, NBC_MeetPress
+ex_32;way_cxn;Frank dug his way to safety.;"Agent V Poss.way Goal; manner of motion = digging";Goldberg 1995;
+ex_33;way_cxn;He knows his way around town.;"stative variant; no physical motion";Goldberg 1995;
+ex_34;way_cxn;Emeril sliced and diced his way to stardom;"coordinated V; Goal = metaphorical";Goldberg 2005;
+ex_35;time_away_cxn;Bill slept the afternoon away.;;Jackendoff 1997;
+ex_36;time_away_cxn;We're twistin' the night away.;;Jackendoff 1997;
+ex_37;time_away_cxn;Fred drank the night away.;;Jackendoff 1997;
+ex_38;wxdy_cxn;What is this scratch doing on the table?;;Kay & Fillmore 1999;
+ex_39;wxdy_cxn;What do you think your name is doing in my book?;;Kay & Fillmore 1999;
+ex_40;wxdy_cxn;What's a nice girl like you doing in a place like this?';;Kay & Fillmore 1999;
+ex_41;incredulity_cxn;What, me worry?;Subject in accusative case (me);Lambrecht 1990;
+ex_42;incredulity_cxn;My boss give me a raise?! (Ha);;Lambrecht 1990;
+ex_43;incredulity_cxn;Him wear a tuxedo?! (Sure.);Subject in accusative case (him);Lambrecht 1990;
+ex_44;comparative_correlative_cxn;The more snow the less danger there is to skiers.;[The more snow] [the less danger there is to skiers];Hoffmann, Brunner & Horsch 2020;BNC W_newsp_brdsht AHC)
+ex_45;comparative_correlative_cxn;The more of them you see the cheaper it is.;[The more of them you see] [the cheaper it is].;Hoffmann, Brunner & Horsch 2020;BNC S_conv KBR
+ex_46;comparative_correlative_cxn;The longer the rain lasted, the more quickly the ramparts melted.;[The longer the rain lasted,] [the more quickly the ramparts melted.];Hoffmann, Brunner & Horsch 2020;BNC W_fict_prose EFW
+ex_47;binominal_np_cxn;This jewel of a park near downtown Oakland offers numerous pleasures for little ones. (COCA);;tenWolde 2023;COCA
+ex_48;binominal_np_cxn;It was a hell of a night for a meeting – with the storm going and the river about to blow. (COCA);;tenWolde 2023;COCA
+ex_49;binominal_np_cxn;It’s an absolute beast of a laptop ;;tenWolde 2023;NOW

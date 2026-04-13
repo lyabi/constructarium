@@ -1,0 +1,14 @@
+﻿id;name;form_phrase_structure;form_syntactic_function;meaning;meaning_description;notes
+intransitive_cxn;Intransitive Construction;NP VP;Subj V;action;X acts;
+transitive_cxn;Transitive Construction;NP VP NP;Subj V Obj;transitive action;X acts on Y;
+ditransitive_cxn;"Ditransitive Construction; Double Object Construction";NP VP NP NP;Subj V Obj1 Obj2;transfer (intended or actual);X causes Y to receive Z;
+caused_motion_cxn;Caused Motion Construction ;NP V NP PP;Subj V Obj Obl;caused motion;X causes Y to move Z;
+resultative_cxn;Resultative Construction;NP V NP XP;Subj V Obj Xcomp;caused change of state;X causes Y to become Z;
+passive_cxn;Passive Construction;NP aux V (by NP);Subj aux VPpp (PPby);discourse-pragmatic;"to make undergoer topical and/or
+actor non-topical";
+way_cxn;way Construction;NP V NP.poss way PP;Subj V Obj[way] Obl;self-propelled motion;X moves to a goal by means of or despite the action denoted by V;
+time_away_cxn;Time away Construction;NP V NP.poss time away;Subj V Obj[time] Obl[away];temporal expenditure;X spends or wastes a time period doing the action denoted by V;
+wxdy_cxn;What's X doing Y? construction;What be NP VP[doing XP];Subj aux Obj Pred;incongruity/disapproval;Speaker signals that something is out of place or disapproved of;
+incredulity_cxn;"Incredulity Response Construction; Mad Magazine Construction";NP[acc] NP?;NP Pred NP;incredulity;Speaker expresses disbelief about an identification or attribution;
+comparative_correlative_cxn;"The Xer the Yer Construction; Comparative Correlative Construction; Covariational Conditional Construction; Proportional Correlative";the Comp-XP1, the Comp-XP2;n/a;correlated scales;linked independent and dependent variables;"biclausal; clause-combining level exceeds scope of this column"
+binominal_np_cxn;"Binominal Noun Phrase Construction; That Fool of a Doctor Construction";Det1 N1 of Det2 N2;n/a;evaluation;N₁ evaluates N₂;"NP-internal construction; no clausal argument roles"

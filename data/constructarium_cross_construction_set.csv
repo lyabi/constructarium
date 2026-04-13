@@ -1,0 +1,6 @@
+﻿set_id;verb;construction_id;sentence;source
+slice_set;slice;transitive_cxn;He sliced the bread.;Goldberg 2005
+slice_set;slice;caused_motion_cxn;Pat sliced the carrots into the salad.;Goldberg 2005
+slice_set;slice;ditransitive_cxn;Pat sliced Chris a piece of pie.;Goldberg 2005
+slice_set;slice;way_cxn;Emeril sliced and diced his way to stardom.;Goldberg 2005
+slice_set;slice;resultative_cxn;Pat sliced the box open.;Goldberg 2005
