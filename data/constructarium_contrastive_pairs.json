@@ -1,0 +1,52 @@
+[
+  {
+    "id": "cp_1",
+    "construction_id_a": "transitive_cxn",
+    "construction_id_b": "caused_motion_cxn",
+    "sentence_a": "He sliced the bread.",
+    "sentence_b": "Pat sliced the carrots into the salad.",
+    "contrast_type": "transitive vs. caused motion",
+    "explanation": "Same verb; transitive encodes simple action on a Patient with no specified endpoint; caused-motion adds a Goal PP, encoding the Theme's change of location as constructionally entailed.",
+    "source_table": "cross_construction_set"
+  },
+  {
+    "id": "cp_2",
+    "construction_id_a": "transitive_cxn",
+    "construction_id_b": "ditransitive_cxn",
+    "sentence_a": "He sliced the bread.",
+    "sentence_b": "Pat sliced Chris a piece of pie.",
+    "contrast_type": "transitive vs. ditransitive",
+    "explanation": "Same verb; ditransitive adds a Recipient and encodes intended transfer; transitive encodes only the action on the object with no transfer meaning.",
+    "source_table": "cross_construction_set"
+  },
+  {
+    "id": "cp_3",
+    "construction_id_a": "transitive_cxn",
+    "construction_id_b": "resultative_cxn",
+    "sentence_a": "He sliced the bread.",
+    "sentence_b": "Pat sliced the box open.",
+    "contrast_type": "transitive vs. resultative",
+    "explanation": "Same verb; resultative adds a result XP (open) encoding the end-state of the object, absent from the plain transitive.",
+    "source_table": "cross_construction_set"
+  },
+  {
+    "id": "cp_4",
+    "construction_id_a": "caused_motion_cxn",
+    "construction_id_b": "resultative_cxn",
+    "sentence_a": "Pat sliced the carrots into the salad.",
+    "sentence_b": "Pat sliced the box open.",
+    "contrast_type": "caused motion vs. resultative",
+    "explanation": "Same verb; resultative can be seen as a metaphorical extension of the caused-motion construction since the result phrase is interpreted as a metaphorical type of Goal; conceptual linking metaphor: CHANGE IS MOTION (Goldberg 1995: 115).",
+    "source_table": "cross_construction_set"
+  },
+  {
+    "id": "cp_5",
+    "construction_id_a": "ditransitive_cxn",
+    "construction_id_b": "caused_motion_cxn",
+    "sentence_a": "Pat sliced Chris a piece of pie.",
+    "sentence_b": "Pat sliced the carrots into the salad.",
+    "contrast_type": "ditransitive vs. caused motion",
+    "explanation": "Same verb; ditransitive encodes transfer to a Recipient; caused-motion encodes directed motion to a location, not possession change.",
+    "source_table": "cross_construction_set"
+  }
+]

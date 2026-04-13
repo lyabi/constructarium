@@ -1,0 +1,90 @@
+[
+  {
+    "set_id": "slice_set",
+    "verb": "slice",
+    "construction_id": "transitive_cxn",
+    "sentence": "He sliced the bread.",
+    "annotation": "",
+    "source": "goldberg_2005"
+  },
+  {
+    "set_id": "slice_set",
+    "verb": "slice",
+    "construction_id": "caused_motion_cxn",
+    "sentence": "Pat sliced the carrots into the salad.",
+    "annotation": "",
+    "source": "goldberg_2005"
+  },
+  {
+    "set_id": "slice_set",
+    "verb": "slice",
+    "construction_id": "ditransitive_cxn",
+    "sentence": "Pat sliced Chris a piece of pie.",
+    "annotation": "",
+    "source": "goldberg_2005"
+  },
+  {
+    "set_id": "slice_set",
+    "verb": "slice",
+    "construction_id": "way_cxn",
+    "sentence": "Emeril sliced and diced his way to stardom.",
+    "annotation": "",
+    "source": "goldberg_2005"
+  },
+  {
+    "set_id": "slice_set",
+    "verb": "slice",
+    "construction_id": "resultative_cxn",
+    "sentence": "Pat sliced the box open.",
+    "annotation": "",
+    "source": "goldberg_2005"
+  },
+  {
+    "set_id": "cook_set",
+    "verb": "cook",
+    "construction_id": "intransitive_cxn",
+    "sentence": "The chicken cooked all night.",
+    "annotation": "",
+    "source": "goldberg_2009"
+  },
+  {
+    "set_id": "cook_set",
+    "verb": "cook",
+    "construction_id": "transitive_cxn",
+    "sentence": "Pat cooked the steaks.",
+    "annotation": "",
+    "source": "goldberg_2009"
+  },
+  {
+    "set_id": "cook_set",
+    "verb": "cook",
+    "construction_id": "resultative_cxn",
+    "sentence": "Pat cooked the steak well done.",
+    "annotation": "",
+    "source": "goldberg_2009"
+  },
+  {
+    "set_id": "cook_set",
+    "verb": "cook",
+    "construction_id": "intransitive_cxn",
+    "sentence": "Pat cooks.",
+    "annotation": "deprofiled object; verb is semantically transitive but object is implicit",
+    "source": "goldberg_2009"
+  },
+  {
+    "set_id": "cook_set",
+    "verb": "cook",
+    "construction_id": "ditransitive_cxn",
+    "sentence": "Pat cooked Chris some dinner.",
+    "annotation": "",
+    "source": "goldberg_2009"
+  },
+  {
+    "set_id": "cook_set",
+    "verb": "cook",
+    "construction_id": "way_cxn",
+    "sentence": "Pat cooked her way into the Illinois State bake-off.",
+    "annotation": "",
+    "source": "goldberg_2009"
+  }
+]

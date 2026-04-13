@@ -1,0 +1,394 @@
+[
+  {
+    "id": "ex_1",
+    "construction_id": "intransitive_cxn",
+    "sentence": "These things happen.",
+    "annotation": "",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 2016, NEWS, Charlotte Observer"
+  },
+  {
+    "id": "ex_2",
+    "construction_id": "intransitive_cxn",
+    "sentence": "His phone rang.",
+    "annotation": "",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 2018, SPOK, NBC_Dateline"
+  },
+  {
+    "id": "ex_3",
+    "construction_id": "intransitive_cxn",
+    "sentence": "PrimeTime continues.",
+    "annotation": "",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 1997, SPOK, ABC_Primetime"
+  },
+  {
+    "id": "ex_4",
+    "construction_id": "intransitive_cxn",
+    "sentence": "People die.",
+    "annotation": "",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 1995, TV, Babylon 5"
+  },
+  {
+    "id": "ex_5",
+    "construction_id": "intransitive_cxn",
+    "sentence": "My heart sank.",
+    "annotation": "unaccusative; Subject = Theme",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 2019, FIC, SouthernRev"
+  },
+  {
+    "id": "ex_6",
+    "construction_id": "transitive_cxn",
+    "sentence": "I read this book.",
+    "annotation": "",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 1993, TV, Homicide: Life on the Street"
+  },
+  {
+    "id": "ex_7",
+    "construction_id": "transitive_cxn",
+    "sentence": "Open this door.",
+    "annotation": "",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 2019, FIC, Analog"
+  },
+  {
+    "id": "ex_8",
+    "construction_id": "transitive_cxn",
+    "sentence": "We play the game the right way.",
+    "annotation": "",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 2012, WEB, sports.yahoo.com"
+  },
+  {
+    "id": "ex_9",
+    "construction_id": "transitive_cxn",
+    "sentence": "Don't eat the cake.",
+    "annotation": "",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 2004, SPOK, NPR_Daybreak"
+  },
+  {
+    "id": "ex_10",
+    "construction_id": "transitive_cxn",
+    "sentence": "He bought a house for more than two million dollars.",
+    "annotation": "Subj V Obj [adjunct PP]",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 2012, BLOG, gossipcop.com"
+  },
+  {
+    "id": "ex_11",
+    "construction_id": "ditransitive_cxn",
+    "sentence": "Sally baked her sister a cake.",
+    "annotation": "",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_12",
+    "construction_id": "ditransitive_cxn",
+    "sentence": "Joe painted Sally a picture.",
+    "annotation": "",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_13",
+    "construction_id": "ditransitive_cxn",
+    "sentence": "Bob told Joe a story.",
+    "annotation": "",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_14",
+    "construction_id": "ditransitive_cxn",
+    "sentence": "Joe gave Mary a sweater with a hole in it.",
+    "annotation": "",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_15",
+    "construction_id": "ditransitive_cxn",
+    "sentence": "Sally gave Bill a headache.",
+    "annotation": "abstract Theme; metaphorical transfer",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_16",
+    "construction_id": "caused_motion_cxn",
+    "sentence": "They laughed the poor guy out of the room.",
+    "annotation": "intransitive verb coerced into caused-motion; Agent V Theme Goal",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_17",
+    "construction_id": "caused_motion_cxn",
+    "sentence": "Frank sneezed the tissue off the table.",
+    "annotation": "intransitive verb coerced; Agent V Theme Source",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_18",
+    "construction_id": "caused_motion_cxn",
+    "sentence": "Mary urged Bill into the house.",
+    "annotation": "verb of instigation; Agent V Theme Goal",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_19",
+    "construction_id": "caused_motion_cxn",
+    "sentence": "Sue let the water out of the bathtub.",
+    "annotation": "",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_20",
+    "construction_id": "caused_motion_cxn",
+    "sentence": "Sam helped him into the car.",
+    "annotation": "",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_21",
+    "construction_id": "caused_motion_cxn",
+    "sentence": "They sprayed the paint onto the wall.",
+    "annotation": "",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_22",
+    "construction_id": "resultative_cxn",
+    "sentence": "The river froze solid.",
+    "annotation": "intransitive resultative; Subject = Theme; result XP = solid",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_23",
+    "construction_id": "resultative_cxn",
+    "sentence": "The tools were wiped clean.",
+    "annotation": "passive resultative; result XP = clean",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_24",
+    "construction_id": "resultative_cxn",
+    "sentence": "I had brushed my hair very smooth.",
+    "annotation": "",
+    "source": "goldberg_1995",
+    "corpus_ref": "Ch. Brontë 1847, Jane Eyre, p. 107"
+  },
+  {
+    "id": "ex_25",
+    "construction_id": "resultative_cxn",
+    "sentence": "Whose whole life is to eat, and drink...and laugh themselves fat.",
+    "annotation": "reflexive object; result XP = fat",
+    "source": "goldberg_1995",
+    "corpus_ref": "OED 1947, Trapp, Comm. and Epist. and Rev."
+  },
+  {
+    "id": "ex_26",
+    "construction_id": "resultative_cxn",
+    "sentence": "She cried herself to sleep.",
+    "annotation": "reflexive object; Agent = Theme; result XP = to sleep",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_27",
+    "construction_id": "passive_cxn",
+    "sentence": "The armadillo was hit by a car.",
+    "annotation": "",
+    "source": "goldberg_2005",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_28",
+    "construction_id": "passive_cxn",
+    "sentence": "America was founded by outsiders.",
+    "annotation": "",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 2013, SPOK, Fox: The Five"
+  },
+  {
+    "id": "ex_29",
+    "construction_id": "passive_cxn",
+    "sentence": "Jesus was born during the reign of Herod.",
+    "annotation": "agentless passive",
+    "source": "davies_2008",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_30",
+    "construction_id": "passive_cxn",
+    "sentence": "Participants were asked about their current and primary position responsibilities.",
+    "annotation": "",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 2015, ACAD, LibraryResources"
+  },
+  {
+    "id": "ex_31",
+    "construction_id": "passive_cxn",
+    "sentence": "Typically, these kinds of decisions are made by local officials.",
+    "annotation": "",
+    "source": "davies_2008",
+    "corpus_ref": "COCA 2010, SPOK, NBC_MeetPress"
+  },
+  {
+    "id": "ex_32",
+    "construction_id": "way_cxn",
+    "sentence": "Frank dug his way to safety.",
+    "annotation": "Agent V Poss.way Goal; manner of motion = digging",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_33",
+    "construction_id": "way_cxn",
+    "sentence": "He knows his way around town.",
+    "annotation": "stative variant; no physical motion",
+    "source": "goldberg_1995",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_34",
+    "construction_id": "way_cxn",
+    "sentence": "Emeril sliced and diced his way to stardom.",
+    "annotation": "coordinated V; Goal = metaphorical",
+    "source": "goldberg_2005",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_35",
+    "construction_id": "time_away_cxn",
+    "sentence": "Bill slept the afternoon away.",
+    "annotation": "",
+    "source": "jackendoff_1997",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_36",
+    "construction_id": "time_away_cxn",
+    "sentence": "We're twistin' the night away.",
+    "annotation": "",
+    "source": "jackendoff_1997",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_37",
+    "construction_id": "time_away_cxn",
+    "sentence": "Fred drank the night away.",
+    "annotation": "",
+    "source": "jackendoff_1997",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_38",
+    "construction_id": "wxdy_cxn",
+    "sentence": "What is this scratch doing on the table?",
+    "annotation": "",
+    "source": "kay_fillmore_1999",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_39",
+    "construction_id": "wxdy_cxn",
+    "sentence": "What do you think your name is doing in my book?",
+    "annotation": "",
+    "source": "kay_fillmore_1999",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_40",
+    "construction_id": "wxdy_cxn",
+    "sentence": "What's a nice girl like you doing in a place like this?",
+    "annotation": "",
+    "source": "kay_fillmore_1999",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_41",
+    "construction_id": "incredulity_cxn",
+    "sentence": "What, me worry?",
+    "annotation": "Subject in accusative case (me)",
+    "source": "lambrecht_1990",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_42",
+    "construction_id": "incredulity_cxn",
+    "sentence": "My boss give me a raise?! (Ha)",
+    "annotation": "",
+    "source": "lambrecht_1990",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_43",
+    "construction_id": "incredulity_cxn",
+    "sentence": "Him wear a tuxedo?! (Sure.)",
+    "annotation": "Subject in accusative case (him)",
+    "source": "lambrecht_1990",
+    "corpus_ref": ""
+  },
+  {
+    "id": "ex_44",
+    "construction_id": "comparative_correlative_cxn",
+    "sentence": "The more snow the less danger there is to skiers.",
+    "annotation": "[The more snow] [the less danger there is to skiers]",
+    "source": "hoffmann_et_al_2020",
+    "corpus_ref": "BNC W_newsp_brdsht AHC"
+  },
+  {
+    "id": "ex_45",
+    "construction_id": "comparative_correlative_cxn",
+    "sentence": "The more of them you see the cheaper it is.",
+    "annotation": "[The more of them you see] [the cheaper it is]",
+    "source": "hoffmann_et_al_2020",
+    "corpus_ref": "BNC S_conv KBR"
+  },
+  {
+    "id": "ex_46",
+    "construction_id": "comparative_correlative_cxn",
+    "sentence": "The longer the rain lasted, the more quickly the ramparts melted.",
+    "annotation": "[The longer the rain lasted,] [the more quickly the ramparts melted]",
+    "source": "hoffmann_et_al_2020",
+    "corpus_ref": "BNC W_fict_prose EFW"
+  },
+  {
+    "id": "ex_47",
+    "construction_id": "binominal_np_cxn",
+    "sentence": "This jewel of a park near downtown Oakland offers numerous pleasures for little ones.",
+    "annotation": "",
+    "source": "tenwolde_2023",
+    "corpus_ref": "COCA"
+  },
+  {
+    "id": "ex_48",
+    "construction_id": "binominal_np_cxn",
+    "sentence": "It was a hell of a night for a meeting – with the storm going and the river about to blow.",
+    "annotation": "",
+    "source": "tenwolde_2023",
+    "corpus_ref": "COCA"
+  },
+  {
+    "id": "ex_49",
+    "construction_id": "binominal_np_cxn",
+    "sentence": "It's an absolute beast of a laptop.",
+    "annotation": "",
+    "source": "tenwolde_2023",
+    "corpus_ref": "NOW"
+  }
+]

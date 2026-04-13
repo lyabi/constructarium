@@ -1,0 +1,162 @@
+[
+  {
+    "id": "intransitive_cxn",
+    "name": "Intransitive Construction",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "NP VP",
+      "syntactic_function": "Subj V"
+    },
+    "meaning": "action",
+    "meaning_description": "X acts",
+    "notes": "",
+    "primary_source": "hoffmann_trousdale_2013"
+  },
+  {
+    "id": "transitive_cxn",
+    "name": "Transitive Construction",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "NP VP NP",
+      "syntactic_function": "Subj V Obj"
+    },
+    "meaning": "transitive action",
+    "meaning_description": "X acts on Y",
+    "notes": "",
+    "primary_source": "hoffmann_trousdale_2013"
+  },
+  {
+    "id": "ditransitive_cxn",
+    "name": "Ditransitive Construction",
+    "alt_names": ["Double Object Construction"],
+    "form": {
+      "phrase_structure": "NP VP NP NP",
+      "syntactic_function": "Subj V Obj1 Obj2"
+    },
+    "meaning": "transfer (intended or actual)",
+    "meaning_description": "X causes Y to receive Z",
+    "notes": "",
+    "primary_source": "goldberg_1995"
+  },
+  {
+    "id": "caused_motion_cxn",
+    "name": "Caused Motion Construction",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "NP V NP PP",
+      "syntactic_function": "Subj V Obj Obl"
+    },
+    "meaning": "caused motion",
+    "meaning_description": "X causes Y to move Z",
+    "notes": "",
+    "primary_source": "goldberg_1995"
+  },
+  {
+    "id": "resultative_cxn",
+    "name": "Resultative Construction",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "NP V NP XP",
+      "syntactic_function": "Subj V Obj Xcomp"
+    },
+    "meaning": "caused change of state",
+    "meaning_description": "X causes Y to become Z",
+    "notes": "",
+    "primary_source": "goldberg_1995"
+  },
+  {
+    "id": "passive_cxn",
+    "name": "Passive Construction",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "NP aux V (by NP)",
+      "syntactic_function": "Subj aux VPpp (PPby)"
+    },
+    "meaning": "discourse-pragmatic",
+    "meaning_description": "to make undergoer topical and/or actor non-topical",
+    "notes": "",
+    "primary_source": "goldberg_2005"
+  },
+  {
+    "id": "way_cxn",
+    "name": "Way Construction",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "NP V NP.poss way PP",
+      "syntactic_function": "Subj V Obj[way] Obl"
+    },
+    "meaning": "self-propelled motion",
+    "meaning_description": "X moves to a goal by means of or despite the action denoted by V",
+    "notes": "",
+    "primary_source": "goldberg_1995"
+  },
+  {
+    "id": "time_away_cxn",
+    "name": "Time Away Construction",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "NP V NP.poss time away",
+      "syntactic_function": "Subj V Obj[time] Obl[away]"
+    },
+    "meaning": "temporal expenditure",
+    "meaning_description": "X spends or wastes a time period doing the action denoted by V",
+    "notes": "",
+    "primary_source": "jackendoff_1997"
+  },
+  {
+    "id": "wxdy_cxn",
+    "name": "What's X Doing Y? Construction",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "What be NP VP[doing XP]",
+      "syntactic_function": "Subj aux Obj Pred"
+    },
+    "meaning": "incongruity/disapproval",
+    "meaning_description": "Speaker signals that something is out of place or disapproved of",
+    "notes": "",
+    "primary_source": "kay_fillmore_1999"
+  },
+  {
+    "id": "incredulity_cxn",
+    "name": "Incredulity Response Construction",
+    "alt_names": ["Mad Magazine Construction"],
+    "form": {
+      "phrase_structure": "NP[acc] NP?",
+      "syntactic_function": "NP Pred NP"
+    },
+    "meaning": "incredulity",
+    "meaning_description": "Speaker expresses disbelief about an identification or attribution",
+    "notes": "",
+    "primary_source": "lambrecht_1990"
+  },
+  {
+    "id": "comparative_correlative_cxn",
+    "name": "Comparative Correlative Construction",
+    "alt_names": [
+      "The Xer the Yer Construction",
+      "Covariational Conditional Construction",
+      "Proportional Correlative"
+    ],
+    "form": {
+      "phrase_structure": "the Comp-XP1, the Comp-XP2",
+      "syntactic_function": "n/a"
+    },
+    "meaning": "correlated scales",
+    "meaning_description": "linked independent and dependent variables",
+    "notes": "biclausal; clause-combining level exceeds scope of syntactic_function column",
+    "primary_source": "hoffmann_et_al_2020"
+  },
+  {
+    "id": "binominal_np_cxn",
+    "name": "Binominal Noun Phrase Construction",
+    "alt_names": ["That Fool of a Doctor Construction"],
+    "form": {
+      "phrase_structure": "Det1 N1 of Det2 N2",
+      "syntactic_function": "n/a"
+    },
+    "meaning": "evaluation",
+    "meaning_description": "N\u2081 evaluates N\u2082",
+    "notes": "NP-internal construction; no clausal argument roles",
+    "primary_source": "tenwolde_2023"
+  }
+]

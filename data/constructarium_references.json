@@ -1,0 +1,82 @@
+[
+  {
+    "id": "davies_2008",
+    "author": "Davies, M.",
+    "year": "2008–",
+    "title": "The Corpus of Contemporary American English (COCA)",
+    "type": "corpus",
+    "url_doi": "https://www.english-corpora.org/coca/"
+  },
+  {
+    "id": "goldberg_1995",
+    "author": "Goldberg, A. E.",
+    "year": 1995,
+    "title": "Constructions: A Construction Grammar Approach to Argument Structure",
+    "type": "book",
+    "url_doi": ""
+  },
+  {
+    "id": "goldberg_2005",
+    "author": "Goldberg, A. E.",
+    "year": 2005,
+    "title": "Constructions at Work: The Nature of Generalization in Language",
+    "type": "book",
+    "url_doi": ""
+  },
+  {
+    "id": "goldberg_2009",
+    "author": "Goldberg, A. E.",
+    "year": 2009,
+    "title": "The nature of generalization in language",
+    "type": "article",
+    "url_doi": ""
+  },
+  {
+    "id": "hoffmann_et_al_2020",
+    "author": "Hoffmann, T., Brunner, T. & Horsch, J.",
+    "year": 2020,
+    "title": "English comparative correlative constructions: a usage-based account",
+    "type": "article",
+    "url_doi": "https://doi.org/10.1515/opli-2020-0012"
+  },
+  {
+    "id": "hoffmann_trousdale_2013",
+    "author": "Hoffmann, T. & Trousdale, G. (eds.)",
+    "year": 2013,
+    "title": "The Oxford Handbook of Construction Grammar",
+    "type": "edited volume",
+    "url_doi": ""
+  },
+  {
+    "id": "jackendoff_1997",
+    "author": "Jackendoff, R.",
+    "year": 1997,
+    "title": "Twistin' the Night Away",
+    "type": "article",
+    "url_doi": "https://www.jstor.org/stable/415883"
+  },
+  {
+    "id": "kay_fillmore_1999",
+    "author": "Kay, P. & Fillmore, C. J.",
+    "year": 1999,
+    "title": "Grammatical Constructions and Linguistic Generalizations: The What's X Doing Y? Construction",
+    "type": "article",
+    "url_doi": "http://www.jstor.org/stable/417472"
+  },
+  {
+    "id": "lambrecht_1990",
+    "author": "Lambrecht, K.",
+    "year": 1990,
+    "title": "'What, me worry?' – 'Mad Magazine Sentences' Revisited",
+    "type": "article",
+    "url_doi": ""
+  },
+  {
+    "id": "tenwolde_2023",
+    "author": "tenWolde, E.",
+    "year": 2023,
+    "title": "The English Binominal Noun Phrase: A Cognitive-Functional Approach",
+    "type": "book",
+    "url_doi": ""
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "nodes": [
+    { "id": "intransitive_cxn", "cluster": "argument_structure" },
+    { "id": "transitive_cxn", "cluster": "argument_structure" },
+    { "id": "ditransitive_cxn", "cluster": "argument_structure" },
+    { "id": "caused_motion_cxn", "cluster": "argument_structure" },
+    { "id": "resultative_cxn", "cluster": "argument_structure" },
+    { "id": "passive_cxn", "cluster": "argument_structure" },
+    { "id": "way_cxn", "cluster": "motion_activity" },
+    { "id": "time_away_cxn", "cluster": "motion_activity" },
+    { "id": "wxdy_cxn", "cluster": "fixed_pragmatic" },
+    { "id": "incredulity_cxn", "cluster": "fixed_pragmatic" },
+    { "id": "comparative_correlative_cxn", "cluster": "clause_combining" },
+    { "id": "binominal_np_cxn", "cluster": "np_internal" }
+  ],
+  "edges": [
+    {
+      "parent": "transitive_cxn",
+      "child": "ditransitive_cxn",
+      "relation": "instance",
+      "notes": "Ditransitive extends transitive by adding a Recipient argument; encodes intended or actual transfer (Goldberg 1995)"
+    },
+    {
+      "parent": "transitive_cxn",
+      "child": "caused_motion_cxn",
+      "relation": "instance",
+      "notes": "Caused motion extends transitive by adding a directional PP; encodes the Theme's change of location as constructionally entailed (Goldberg 1995)"
+    },
+    {
+      "parent": "transitive_cxn",
+      "child": "resultative_cxn",
+      "relation": "instance",
+      "notes": "Resultative extends transitive by adding a result XP encoding the end-state of the object (Goldberg 1995)"
+    },
+    {
+      "parent": "transitive_cxn",
+      "child": "passive_cxn",
+      "relation": "discourse_variant",
+      "notes": "Passive shares the semantics of transitive but differs in information structure: the undergoer is topicalized and the actor is demoted or omitted (Goldberg 2005)"
+    },
+    {
+      "parent": "caused_motion_cxn",
+      "child": "way_cxn",
+      "relation": "instance",
+      "notes": "Way construction is a subtype of caused motion in which Agent and Theme are coreferential; encodes self-propelled motion to a goal by means of the action denoted by V (Goldberg 1995)"
+    },
+    {
+      "parent": "caused_motion_cxn",
+      "child": "resultative_cxn",
+      "relation": "metaphorical_extension",
+      "notes": "The result XP of the resultative can be interpreted as a metaphorical Goal via the CHANGE IS MOTION conceptual metaphor, linking resultative to caused motion (Goldberg 1995: 115)"
+    },
+    {
+      "parent": "way_cxn",
+      "child": "time_away_cxn",
+      "relation": "instance",
+      "notes": "Time-away shares the NP V NP.poss X structure with the way construction but encodes temporal expenditure rather than spatial motion (Jackendoff 1997)"
+    }
+  ]
+}
