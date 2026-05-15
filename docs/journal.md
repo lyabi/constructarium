@@ -44,3 +44,13 @@ Completed CSV → JSON conversion for all data files:
 - Added minimal JavaScript in `js/app.js` only where it was necessary for the prototype: interactive comparison switching and verb-set switching.
 - Upgraded key prototype areas to data-driven rendering from JSON: Comparison View, Verb Explorer, and Inheritance Network now load from files in `data/`.
 - Implemented a lightweight inheritance graph as inline SVG generated from `constructarium_inheritance.json` plus construction metadata.
+
+## 15.05.2026
+**Visual redesign.** Replaced the warm-academic aesthetic with a cleaner, more modern look:
+- **Colour palette:** warm off-white and brown tones replaced with cool lavender-neutral background (`#F5F4F8`) and violet-tinted border/text colours. Cluster colours updated to accessible pastels (blue, green, rose, violet, amber) with richer accent shades for headings and borders (all WCAG AA compliant). Dark amber (`#B06000`) as the interactive accent throughout.
+- **Construction cards:** now display a full pastel tint background per cluster with a 4px coloured left border stripe. Fixed 3-column grid (2 on medium screens, 1 on mobile) so card rows are always consistent. Cards stretch to equal height within each row (`height: 100%`). Fixed a `li + li { margin-top }` inheritance bug that caused the first card in each row to sit above its neighbours.
+- **Typography:** replaced Lora (serif) with Plus Jakarta Sans (geometric sans-serif) for headings. Heading weight increased to 600. Border-radius tightened from 0.35rem to 0.25rem for a crisper look.
+- **Header:** full-width sticky violet bar (`#2E1A6E`), white wordmark at weight 700, white nav items at 88% opacity. Hover turns links to light amber. Nav items no longer underlined. Font size and item spacing increased.
+- **Home entry points:** "Explore the Project" cards replaced with pill-shaped navigation buttons (violet fill, white text, amber on hover) in a flex row.
+- **Scroll behaviour:** removed `scroll-behavior: smooth`; anchor links now jump instantly.
+

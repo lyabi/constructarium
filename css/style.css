@@ -5,20 +5,25 @@
 
 /* Color and font variables live in :root so we can reuse them everywhere. */
 :root {
-  --bg: #f5f3ee;
+  --bg: #f5f4f8;
   --surface: #ffffff;
-  --text-primary: #1c1b18;
-  --text-secondary: #6b6860;
-  --border: #e4e0d8;
-  --accent: #2f4f6f;
-  --focus-ring: #1f5f99;
-  --argument-structure: #3d6b9f;
-  --motion-activity: #5c8c6e;
-  --fixed-pragmatic: #b85c3a;
-  --clause-combining: #7a5c9e;
-  --np-internal: #a07830;
+  --text-primary: #1c1b22;
+  --text-secondary: #6b6878;
+  --border: #e2dff0;
+  --accent: #b06000;
+  --focus-ring: #b06000;
+  --argument-structure: #1a5fa8;
+  --argument-structure-tint: #ddeeff;
+  --motion-activity: #1a7040;
+  --motion-activity-tint: #d6f0e3;
+  --fixed-pragmatic: #b82055;
+  --fixed-pragmatic-tint: #ffdce8;
+  --clause-combining: #6030a0;
+  --clause-combining-tint: #ead9ff;
+  --np-internal: #8a5500;
+  --np-internal-tint: #fff0cc;
   /* Shared font variables let us apply one clear role to each typeface */
-  --font-heading: "Lora", Georgia, serif;
+  --font-heading: "Plus Jakarta Sans", Arial, sans-serif;
   --font-body: "Inter", Arial, sans-serif;
   --font-notation: "JetBrains Mono", "Courier New", monospace;
 }
@@ -49,11 +54,6 @@ body {
   line-height: 1.6;
 }
 
-/* Smooth scrolling makes the many in-page anchor links feel less abrupt. */
-html {
-  scroll-behavior: smooth;
-}
-
 /* When anchor links jump to a section or article, leave a little breathing room at the top. */
 section,
 article {
@@ -61,7 +61,6 @@ article {
 }
 
 /* Keep the main page content centered and readable. */
-header,
 main,
 footer {
   width: min(1200px, calc(100% - 2rem));
@@ -76,11 +75,14 @@ footer {
 }
 
 header {
-  padding: 1rem 0;
+  background: #2e1a6e;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 main {
-  padding: 0 0 3rem;
+  padding: 1.5rem 0 3rem;
 }
 
 section,
@@ -96,7 +98,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.25;
   margin-top: 0;
   margin-bottom: 0.75rem;
@@ -272,19 +274,28 @@ header nav[aria-label="Primary"] {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 1.125rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* The site title behaves like a wordmark, so it uses the heading font. */
 header nav[aria-label="Primary"] > a {
   font-family: var(--font-heading);
   font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
   text-decoration: none;
 }
 
-header nav[aria-label="Primary"] ul a:hover {
-  text-decoration: underline;
+header nav[aria-label="Primary"] ul a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header nav[aria-label="Primary"] a:hover {
+  color: #ffe8c0;
+  text-decoration: none;
 }
 
 header nav[aria-label="Primary"] ul {
@@ -292,11 +303,12 @@ header nav[aria-label="Primary"] ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 1rem 1.5rem;
+  gap: 1rem 2rem;
   margin: 0;
   padding: 0;
   list-style: none;
-  color: var(--text-primary);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 header nav[aria-label="Primary"] li + li {
@@ -371,7 +383,7 @@ nav[aria-label="Verb sets"] li + li {
 }
 
 .construction-card-list {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* Repeated content blocks share the same card-like surface treatment. */
@@ -386,7 +398,7 @@ nav[aria-label="Verb sets"] li + li {
   background: var(--surface);
   border: 1px solid var(--border);
   padding: 1rem;
-  border-radius: 0.35rem;
+  border-radius: 0.25rem;
 }
 
 .entry-point-card a,
@@ -434,13 +446,15 @@ nav[aria-label="Verb sets"] a:hover {
   gap: 0.75rem;
 }
 
-/* These lists use grid gap for spacing, so we turn off the older margin-based list rhythm here. */
+/* These lists use grid or flex gap for spacing, so we turn off the older margin-based list rhythm here. */
 .detail-link-list li + li,
 .example-list li + li,
 .cross-construction-list li + li,
 .reference-list li + li,
 .legend-list li + li,
-.standalone-construction-list li + li {
+.standalone-construction-list li + li,
+.construction-card-list li + li,
+.entry-point-list li + li {
   margin-top: 0;
 }
 
@@ -477,26 +491,35 @@ nav[aria-label="Verb sets"] a:hover {
   color: var(--np-internal);
 }
 
-/* nth-of-type maps each cluster block in the index to its matching cluster color. */
-/* The left border is a simple way to mark cluster identity on each construction card. */
+/* Each cluster card gets a pastel tint background and a coloured left border. */
 #construction-index section:nth-of-type(1) .construction-card {
-  border-left: 6px solid var(--argument-structure);
+  background: var(--argument-structure-tint);
+  border-left: 4px solid var(--argument-structure);
 }
 
 #construction-index section:nth-of-type(2) .construction-card {
-  border-left: 6px solid var(--motion-activity);
+  background: var(--motion-activity-tint);
+  border-left: 4px solid var(--motion-activity);
 }
 
 #construction-index section:nth-of-type(3) .construction-card {
-  border-left: 6px solid var(--fixed-pragmatic);
+  background: var(--fixed-pragmatic-tint);
+  border-left: 4px solid var(--fixed-pragmatic);
 }
 
 #construction-index section:nth-of-type(4) .construction-card {
-  border-left: 6px solid var(--clause-combining);
+  background: var(--clause-combining-tint);
+  border-left: 4px solid var(--clause-combining);
 }
 
 #construction-index section:nth-of-type(5) .construction-card {
-  border-left: 6px solid var(--np-internal);
+  background: var(--np-internal-tint);
+  border-left: 4px solid var(--np-internal);
+}
+
+/* Cards fill their grid cell so all cards in a row share the same height. */
+.construction-card {
+  height: 100%;
 }
 
 /* The detail section is long and dense, so each construction gets its own clear panel. */
@@ -504,8 +527,8 @@ nav[aria-label="Verb sets"] a:hover {
   padding: 1.5rem;
   margin-top: 1.5rem;
   border: 1px solid var(--border);
-  background: #fcfbf8;
-  border-radius: 0.35rem;
+  background: var(--surface);
+  border-radius: 0.25rem;
 }
 
 #construction-detail article[id^="detail-"]:first-of-type {
@@ -552,8 +575,8 @@ nav[aria-label="Verb sets"] a:hover {
 .comparison-pair-list li {
   padding: 0.875rem 1rem;
   border: 1px solid var(--border);
-  background: #fcfbf8;
-  border-radius: 0.35rem;
+  background: var(--surface);
+  border-radius: 0.25rem;
 }
 
 .comparison-pair-list a {
@@ -569,8 +592,8 @@ nav[aria-label="Verb sets"] a:hover {
 #comparison-pair-detail {
   padding: 1.5rem;
   border: 1px solid var(--border);
-  background: #fcfbf8;
-  border-radius: 0.35rem;
+  background: var(--surface);
+  border-radius: 0.25rem;
 }
 
 .comparison-sentences {
@@ -585,7 +608,7 @@ nav[aria-label="Verb sets"] a:hover {
   padding: 1rem;
   border: 1px solid var(--border);
   background: var(--surface);
-  border-radius: 0.35rem;
+  border-radius: 0.25rem;
 }
 
 .comparison-sentences p {
@@ -607,14 +630,14 @@ nav[aria-label="Verb sets"] a {
   display: inline-block;
   padding: 0.5rem 0.9rem;
   border: 1px solid var(--border);
-  background: #fcfbf8;
+  background: var(--surface);
   text-decoration: none;
   color: var(--text-primary);
   border-radius: 999px;
 }
 
 nav[aria-label="Verb sets"] a[aria-current="true"] {
-  background: #efe7da;
+  background: #ffe8c0;
   border-color: var(--accent);
   color: var(--accent);
   font-weight: 600;
@@ -644,7 +667,7 @@ nav[aria-label="Verb sets"] a:focus-visible,
 }
 
 #verb-explorer th {
-  background: #f0ece4;
+  background: #eeeaf8;
   color: var(--text-primary);
 }
 
@@ -675,14 +698,33 @@ nav[aria-label="Verb sets"] a:focus-visible,
   max-width: 65ch;
 }
 
-/* Home page cards act as the main launch points into the site. */
+/* Home navigation pills: a row of violet pills replacing the card grid. */
 #home .entry-point-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-top: 1.5rem;
 }
 
 #home .entry-point-card {
-  min-height: 100%;
-  background: linear-gradient(180deg, #fffdf9 0%, #f7f2ea 100%);
+  background: #2e1a6e;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  min-height: unset;
+  color: #ffffff;
+}
+
+#home .entry-point-card a {
+  display: inline;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+#home .entry-point-card:hover {
+  background: var(--accent);
+  border-color: transparent;
 }
 
 
@@ -690,8 +732,8 @@ nav[aria-label="Verb sets"] a:focus-visible,
 #inheritance-network section {
   padding: 1.25rem;
   border: 1px solid var(--border);
-  background: #fcfbf8;
-  border-radius: 0.35rem;
+  background: var(--surface);
+  border-radius: 0.25rem;
 }
 
 #inheritance-network .legend-list {
@@ -731,7 +773,7 @@ nav[aria-label="Verb sets"] a:focus-visible,
 }
 
 .metaphorical-edge {
-  stroke: #c4905a;
+  stroke: #c47820;
   stroke-dasharray: 7 5;
 }
 
@@ -756,23 +798,23 @@ nav[aria-label="Verb sets"] a:focus-visible,
 }
 
 .cluster-argument_structure circle {
-  fill: #dbe8f5;
+  fill: var(--argument-structure-tint);
 }
 
 .cluster-motion_activity circle {
-  fill: #dcebdc;
+  fill: var(--motion-activity-tint);
 }
 
 .cluster-fixed_pragmatic circle {
-  fill: #f2ddd4;
+  fill: var(--fixed-pragmatic-tint);
 }
 
 .cluster-clause_combining circle {
-  fill: #e5ddf0;
+  fill: var(--clause-combining-tint);
 }
 
 .cluster-np_internal circle {
-  fill: #efe4c8;
+  fill: var(--np-internal-tint);
 }
 
 /* ==================================================
@@ -783,7 +825,6 @@ nav[aria-label="Verb sets"] a:focus-visible,
 /* @media means: only apply these rules when the screen is at or below a certain width. */
 /* We add responsive changes after the main layout is established. */
 @media (max-width: 900px) {
-  header,
   main {
     width: min(100% - 1rem, 1200px);
   }
@@ -792,6 +833,7 @@ nav[aria-label="Verb sets"] a:focus-visible,
   header nav[aria-label="Primary"] {
     align-items: flex-start;
     flex-direction: column;
+    padding: 0.75rem 1rem;
   }
 
   header nav[aria-label="Primary"] ul {
@@ -805,7 +847,7 @@ nav[aria-label="Verb sets"] a:focus-visible,
 
   /* Cards can become narrower here without hurting readability. */
   .construction-card-list {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
