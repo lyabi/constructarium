@@ -45,6 +45,19 @@ Completed CSV → JSON conversion for all data files:
 - Upgraded key prototype areas to data-driven rendering from JSON: Comparison View, Verb Explorer, and Inheritance Network now load from files in `data/`.
 - Implemented a lightweight inheritance graph as inline SVG generated from `constructarium_inheritance.json` plus construction metadata.
 
+## 17.05.2026
+**JavaScript rewritten from scratch.**
+The previous `js/app.js` — which included interactive comparison switching, verb-set switching, and an inline SVG inheritance graph generated from `constructarium_inheritance.json` — was removed entirely. The inline SVG approach to the inheritance network was set aside as too complex for this stage of the prototype.
+
+A new `app.js` was written step by step, learning each concept before moving to the next:
+
+- **Data loading:** all five JSON files (`constructions`, `references`, `contrastive_pairs`, `cross_construction_set`, `inheritance`) are fetched with `async`/`await` inside a `DOMContentLoaded` listener, so the page is fully loaded and all data is available before any rendering begins.
+- **References (About page):** `references.json` is iterated with `forEach`; a `<li>` element is created per entry and appended to `#reference-list`, formatting author, year, and title from separate JSON fields.
+- **Comparison View:** `contrastive_pairs.json` populates the clickable pair list. Each list item has a click event listener that resolves `construction_id_a/b` to human-readable names via `.find()` on `constructions`, sets the example sentence text and its anchor `href` (converting underscores to hyphens to match HTML anchor IDs), and fills in the contrast type and explanation.
+- **Verb Explorer:** `new Set()` on a `.map()` of `set_id` values produces the two unique verb sets (slice, cook) without duplicates. Each set gets a clickable list item that toggles section visibility via the `hidden` property. A `fillSetTable()` function builds table rows by resolving `construction_id` → construction name and `source` → `author (year)` using `.find()` on the already-loaded datasets.
+
+Documented the concept and structure of `app.js` in `docs/app-concept.md`.
+
 ## 15.05.2026
 **Visual redesign.** Replaced the warm-academic aesthetic with a cleaner, more modern look:
 - **Colour palette:** warm off-white and brown tones replaced with cool lavender-neutral background (`#F5F4F8`) and violet-tinted border/text colours. Cluster colours updated to accessible pastels (blue, green, rose, violet, amber) with richer accent shades for headings and borders (all WCAG AA compliant). Dark amber (`#B06000`) as the interactive accent throughout.
