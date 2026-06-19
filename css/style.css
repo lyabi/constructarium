@@ -747,7 +747,7 @@ nav[aria-label="Verb sets"] a:focus-visible,
 
 /* Even before the graph exists, the placeholder should look like a dedicated canvas. */
 #inheritance-graph {
-  min-height: 220px;
+  height: 500px;
   padding: 1rem;
   border: 1px dashed var(--border);
   background: var(--surface);

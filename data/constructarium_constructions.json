@@ -28,7 +28,9 @@
   {
     "id": "ditransitive_cxn",
     "name": "Ditransitive Construction",
-    "alt_names": ["Double Object Construction"],
+    "alt_names": [
+      "Double Object Construction"
+    ],
     "form": {
       "phrase_structure": "NP VP NP NP",
       "syntactic_function": "Subj V Obj1 Obj2"
@@ -36,6 +38,58 @@
     "meaning": "transfer (intended or actual)",
     "meaning_description": "X causes Y to receive Z",
     "notes": "",
+    "primary_source": "goldberg_1995"
+  },
+  {
+    "id": "ditransitive_transfer_cxn",
+    "name": "Ditransitive: Transfer",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "NP VP NP NP",
+      "syntactic_function": "Subj V Obj1 Obj2"
+    },
+    "meaning": "actual or intended transfer of possession",
+    "meaning_description": "X causes Y to receive Z",
+    "notes": "Goldberg 1995: 38",
+    "primary_source": "goldberg_1995"
+  },
+  {
+    "id": "ditransitive_enablement_cxn",
+    "name": "Ditransitive: Enablement",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "NP VP NP NP",
+      "syntactic_function": "Subj V Obj1 Obj2"
+    },
+    "meaning": "caused enablement of transfer",
+    "meaning_description": "X enables Y to receive Z",
+    "notes": "Goldberg 1995: 39",
+    "primary_source": "goldberg_1995"
+  },
+  {
+    "id": "ditransitive_promise_cxn",
+    "name": "Ditransitive: Promise",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "NP VP NP NP",
+      "syntactic_function": "Subj V Obj1 Obj2"
+    },
+    "meaning": "intended future transfer via promise",
+    "meaning_description": "X commits to Y receiving Z",
+    "notes": "Goldberg 1995: 39",
+    "primary_source": "goldberg_1995"
+  },
+  {
+    "id": "ditransitive_refusal_cxn",
+    "name": "Ditransitive: Refusal",
+    "alt_names": [],
+    "form": {
+      "phrase_structure": "NP VP NP NP",
+      "syntactic_function": "Subj V Obj1 Obj2"
+    },
+    "meaning": "refusal of transfer",
+    "meaning_description": "X withholds Z from Y",
+    "notes": "Goldberg 1995: 40",
     "primary_source": "goldberg_1995"
   },
   {
@@ -119,7 +173,9 @@
   {
     "id": "incredulity_cxn",
     "name": "Incredulity Response Construction",
-    "alt_names": ["Mad Magazine Construction"],
+    "alt_names": [
+      "Mad Magazine Construction"
+    ],
     "form": {
       "phrase_structure": "NP[acc] NP?",
       "syntactic_function": "NP Pred NP"
@@ -149,7 +205,9 @@
   {
     "id": "binominal_np_cxn",
     "name": "Binominal Noun Phrase Construction",
-    "alt_names": ["That Fool of a Doctor Construction"],
+    "alt_names": [
+      "That Fool of a Doctor Construction"
+    ],
     "form": {
       "phrase_structure": "Det1 N1 of Det2 N2",
       "syntactic_function": "n/a"

@@ -1,17 +1,76 @@
 {
   "nodes": [
-    { "id": "intransitive_cxn", "cluster": "argument_structure" },
-    { "id": "transitive_cxn", "cluster": "argument_structure" },
-    { "id": "ditransitive_cxn", "cluster": "argument_structure" },
-    { "id": "caused_motion_cxn", "cluster": "argument_structure" },
-    { "id": "resultative_cxn", "cluster": "argument_structure" },
-    { "id": "passive_cxn", "cluster": "argument_structure" },
-    { "id": "way_cxn", "cluster": "motion_activity" },
-    { "id": "time_away_cxn", "cluster": "motion_activity" },
-    { "id": "wxdy_cxn", "cluster": "fixed_pragmatic" },
-    { "id": "incredulity_cxn", "cluster": "fixed_pragmatic" },
-    { "id": "comparative_correlative_cxn", "cluster": "clause_combining" },
-    { "id": "binominal_np_cxn", "cluster": "np_internal" }
+    {
+      "id": "intransitive_cxn",
+      "cluster": "argument_structure"
+    },
+    {
+      "id": "transitive_cxn",
+      "cluster": "argument_structure"
+    },
+    {
+      "id": "ditransitive_cxn",
+      "cluster": "argument_structure"
+    },
+    {
+      "id": "caused_motion_cxn",
+      "cluster": "argument_structure",
+      "note": "Lexical licensing condition: the verb must independently license intransitive motion (Goldberg 1995)"
+    },
+    {
+      "id": "resultative_cxn",
+      "cluster": "argument_structure",
+      "multiple_inheritance": true,
+      "note": "Cross-classified under transitive_cxn (instance) and caused_motion_cxn (metaphorical_extension)"
+    },
+    {
+      "id": "passive_cxn",
+      "cluster": "argument_structure"
+    },
+    {
+      "id": "way_cxn",
+      "cluster": "motion_activity"
+    },
+    {
+      "id": "time_away_cxn",
+      "cluster": "motion_activity"
+    },
+    {
+      "id": "wxdy_cxn",
+      "cluster": "fixed_pragmatic"
+    },
+    {
+      "id": "incredulity_cxn",
+      "cluster": "fixed_pragmatic"
+    },
+    {
+      "id": "comparative_correlative_cxn",
+      "cluster": "clause_combining"
+    },
+    {
+      "id": "binominal_np_cxn",
+      "cluster": "np_internal"
+    },
+    {
+      "id": "ditransitive_transfer_cxn",
+      "cluster": "argument_structure",
+      "note": "Actual or intended transfer of possession: 'She gave him a book' (Goldberg 1995: 38)"
+    },
+    {
+      "id": "ditransitive_enablement_cxn",
+      "cluster": "argument_structure",
+      "note": "Caused enablement of transfer: 'She baked him a cake' (Goldberg 1995: 39)"
+    },
+    {
+      "id": "ditransitive_promise_cxn",
+      "cluster": "argument_structure",
+      "note": "Intended future transfer via promise: 'She promised him a car' (Goldberg 1995: 39)"
+    },
+    {
+      "id": "ditransitive_refusal_cxn",
+      "cluster": "argument_structure",
+      "note": "Refusal of transfer: 'She refused him a dance' (Goldberg 1995: 40)"
+    }
   ],
   "edges": [
     {
@@ -33,9 +92,9 @@
       "notes": "Resultative extends transitive by adding a result XP encoding the end-state of the object (Goldberg 1995)"
     },
     {
-      "parent": "transitive_cxn",
-      "child": "passive_cxn",
-      "relation": "discourse_variant",
+      "source": "transitive_cxn",
+      "target": "passive_cxn",
+      "relation": "construal_variant",
       "notes": "Passive shares the semantics of transitive but differs in information structure: the undergoer is topicalized and the actor is demoted or omitted (Goldberg 2005)"
     },
     {
@@ -48,13 +107,73 @@
       "parent": "caused_motion_cxn",
       "child": "resultative_cxn",
       "relation": "metaphorical_extension",
-      "notes": "The result XP of the resultative can be interpreted as a metaphorical Goal via the CHANGE IS MOTION conceptual metaphor, linking resultative to caused motion (Goldberg 1995: 115)"
+      "notes": "The result XP of the resultative can be interpreted as a metaphorical Goal via the CHANGE IS MOTION conceptual metaphor, linking resultative to caused motion (Goldberg 1995)"
     },
     {
       "parent": "way_cxn",
       "child": "time_away_cxn",
       "relation": "instance",
       "notes": "Time-away shares the NP V NP.poss X structure with the way construction but encodes temporal expenditure rather than spatial motion (Jackendoff 1997)"
+    },
+    {
+      "source": "wxdy_cxn",
+      "target": "incredulity_cxn",
+      "relation": "related_to",
+      "notes": "Both are fixed pragmatic interrogatives encoding irony/surprise (Kay & Fillmore 1999)"
+    },
+    {
+      "source": "resultative_cxn",
+      "target": "time_away_cxn",
+      "relation": "related_to",
+      "notes": "Time-away encodes result (temporal expenditure) and is arguably closer to resultative than to way_cxn (Goldberg 1995)"
+    },
+    {
+      "source": "comparative_correlative_cxn",
+      "target": "transitive_cxn",
+      "relation": "subpart",
+      "notes": "Each correlative clause in the the-X-the-Y schema may independently instantiate a transitive (or intransitive) argument structure; the construction is thus a complex clause-combining schema whose internal clauses are subparts governed by argument structure constructions (Fillmore, Kay & O'Connor 1988; Culicover & Jackendoff 1999)"
+    },
+    {
+      "source": "binominal_np_cxn",
+      "target": "transitive_cxn",
+      "relation": "subpart",
+      "notes": "The binominal NP (e.g. 'a bear of a man') is NP-internal but typically occupies an argument slot of a transitive or intransitive construction; the host clause is a subpart of the larger constructional environment (Lambrecht 1984; Kay & Michaelis 2012)"
+    },
+    {
+      "source": "wxdy_cxn",
+      "target": "transitive_cxn",
+      "relation": "subpart",
+      "notes": "The WXDY schema 'What is NP doing VP?' embeds a transitive or intransitive clause as its core propositional subpart; the constructional meaning arises from the mismatch between the embedded clause and its pragmatic framing (Kay & Fillmore 1999)"
+    },
+    {
+      "source": "resultative_cxn",
+      "target": "intransitive_cxn",
+      "relation": "subpart",
+      "notes": "The so-called 'intransitive resultative' (e.g. 'She ran herself ragged') contains a reflexive subpart that patterns with intransitive motion; the intransitive_cxn is thus a subpart of the broader resultative frame (Goldberg & Jackendoff 2004)"
+    },
+    {
+      "parent": "ditransitive_cxn",
+      "child": "ditransitive_transfer_cxn",
+      "relation": "instance",
+      "notes": "Central sense; prototypical transfer of possession (Goldberg 1995: 38)"
+    },
+    {
+      "source": "ditransitive_transfer_cxn",
+      "target": "ditransitive_enablement_cxn",
+      "relation": "polysemy",
+      "notes": "Extension from actual to caused-enablement reading via metaphorical transfer (Goldberg 1995: 39)"
+    },
+    {
+      "source": "ditransitive_transfer_cxn",
+      "target": "ditransitive_promise_cxn",
+      "relation": "polysemy",
+      "notes": "Extension to intended future transfer; speaker commits to possession change (Goldberg 1995: 40)"
+    },
+    {
+      "source": "ditransitive_transfer_cxn",
+      "target": "ditransitive_refusal_cxn",
+      "relation": "polysemy",
+      "notes": "Extends transfer by negating it; possesion change is withheld (Goldberg 1995: 40)"
     }
   ]
 }
