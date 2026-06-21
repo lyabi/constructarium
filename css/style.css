@@ -780,10 +780,6 @@ nav[aria-label="Verb sets"] li span.active {
   max-width: 65ch;
 }
 
-#about-sources p {
-  text-align: justify;
-  hyphens: auto;
-}
 
 /* Home navigation pills: a row of violet pills replacing the card grid. */
 #home .entry-point-list {
