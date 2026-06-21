@@ -509,9 +509,9 @@ nav[aria-label="Verb sets"] a:hover {
   color: var(--text-secondary);
 }
 
-/* On coloured card backgrounds --text-secondary lacks contrast; use a darker value. */
+/* On coloured card backgrounds --text-secondary lacks contrast; use primary text colour. */
 #construction-index .construction-card p:last-child {
-  color: #5a5768;
+  color: var(--text-primary);
 }
 
 .construction-card h4,
