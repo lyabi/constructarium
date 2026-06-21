@@ -1130,13 +1130,13 @@ The selected comparison panel has its own card-like styling — a visible border
 The two construction articles sit in a single-column grid on mobile, side by side in two equal columns at 680px. Each article has its own card styling — a bordered panel that visually frames it as a distinct block.
 
 ```css
-.comparison-pair-list a[aria-current="true"] {
+.comparison-pair-list li[aria-current="true"] {
   color: var(--accent);
   font-weight: 600;
 }
 ```
 
-`[aria-current="true"]` is the attribute that JavaScript sets on the currently-selected pair link. *(Will be explained later in the semester.)* The CSS styles that link in amber and bold to mark it as active.
+`[aria-current="true"]` is the attribute that JavaScript sets on the currently-selected pair item. *(Will be explained later in the semester.)* The selector targets the `<li>` directly — not a child `<a>` — because the list items have no anchor element inside them. The CSS styles the active item in amber and bold to mark it as selected.
 
 ---
 
@@ -1337,4 +1337,4 @@ This is the one `max-width` rule in the stylesheet. On screens narrower than 900
 
 ---
 
-*End of tutorial. Last updated June 2026 (major revision: local fonts via `@font-face`, sticky dark-purple header, mobile-first responsive approach, Plus Jakarta Sans heading font, cluster tint card backgrounds, hamburger navigation with animated × toggle, updated heading hierarchy h1–h4, six-type inheritance legend with inline SVG samples, entry-point pills, Cytoscape + dagre graph library scripts).*
+*End of tutorial. Last updated June 2026 (major revision: local fonts via `@font-face`, sticky dark-purple header, mobile-first responsive approach, Plus Jakarta Sans heading font, cluster tint card backgrounds, hamburger navigation with animated × toggle, updated heading hierarchy h1–h4, six-type inheritance legend with inline SVG samples, entry-point pills, Cytoscape + dagre graph library scripts; accessibility fixes: comparison pair active state via `li[aria-current="true"]`, keyboard support for comparison pairs and verb-set tabs, hamburger navigation and footer added to imprint.html).*

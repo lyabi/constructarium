@@ -313,16 +313,6 @@ td {
    These rules style the overall page frame.
    ================================================== */
 
-/* Early section separation for the long one-page prototype. */
-main > section {
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--border);
-}
-
-main > section:first-child {
-  border-top: 0;
-}
-
 /* Site-wide nav styles the top navigation across the whole page. */
 header nav[aria-label="Primary"] {
   display: flex;
@@ -657,11 +647,7 @@ nav[aria-label="Verb sets"] a:hover {
   border-radius: 0.25rem;
 }
 
-.comparison-pair-list a {
-  text-decoration: none;
-}
-
-.comparison-pair-list a[aria-current="true"] {
+.comparison-pair-list li[aria-current="true"] {
   color: var(--accent);
   font-weight: 600;
 }
@@ -728,7 +714,7 @@ nav[aria-label="Verb sets"] li span.active {
 .entry-point-card a:focus-visible,
 .construction-card a:focus-visible,
 .detail-link-list a:focus-visible,
-.comparison-pair-list a:focus-visible {
+.comparison-pair-list li:focus-visible {
   outline: 3px solid var(--focus-ring);
   outline-offset: 3px;
 }
@@ -884,8 +870,8 @@ nav[aria-label="Verb sets"] li span.active {
   }
 
   #inheritance-graph {
-  height: 500px;
-}
+    height: 500px;
+  }
 }
 
 @media (min-width: 900px) {

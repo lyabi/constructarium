@@ -20,7 +20,7 @@ All content is loaded dynamically from JSON files in `data/`. The JavaScript is 
 - open constructions from the index or from links inside other sections
 - use the Comparison View to switch between contrast pairs
 - use the Verb Explorer to switch between verb sets
-- use the Inheritance Network to zoom and pan the graph, and click nodes to follow links to construction details
+- use the Inheritance Network to zoom and pan the graph
 
 ## Run Locally
 

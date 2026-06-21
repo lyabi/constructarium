@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     cytoscape({
         container: document.getElementById('inheritance-graph'),
         elements: cytoscapeNodes.concat(cytoscapeEdges),
+        minZoom: 0.3,
+        maxZoom: 2.5,
         layout: {
             name: 'dagre',
             rankDir: 'TB',
             rankSep: 80,
             nodeSep: 50,
             nodeDimensionsIncludeLabels: true,
-            minZoom: 0.3,
-            maxZoom: 2.5,
         },
         style: [
             {

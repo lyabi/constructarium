@@ -118,3 +118,23 @@ Documented the concept and structure of `app.js` in `docs/app-concept.md`.
 - `#inheritance-graph` in `css/style.css`: base height reduced to `250px` (mobile), overridden to `500px` inside the `min-width: 680px` media query. Cytoscape renders to a canvas, so horizontal scrolling is not possible — a shorter container is more appropriate for small screens.
 - `js/graph.js`: Added `minZoom: 0.3` and `maxZoom: 2.5` to the Cytoscape configuration. This allows users to zoom out far enough to see the full graph on small screens and zoom in to read labels.
 
+**Accessibility and consistency fixes (code review):**
+
+*imprint.html:*
+- Added `<meta name="description">` — was missing while `index.html` had one.
+- Added `<footer>` with a link back to `index.html` — structural consistency with `index.html` and gives users a way to navigate home.
+- Added hamburger navigation: `<button class="nav-toggle">` and `id="primary-nav-list"` on the `<ul>`, plus a small inline `<script>` for the toggle logic. Without the `id`, the existing CSS hamburger rules (`@media (max-width: 899px) { #primary-nav-list }`) did not apply to the imprint page.
+
+*css/style.css:*
+- Updated `.comparison-pair-list a[aria-current="true"]` → `.comparison-pair-list li[aria-current="true"]`. The JavaScript builds plain `<li>` items with no `<a>` inside, so the `a` selector never matched anything — the active state had no visual effect.
+- Removed `.comparison-pair-list a { text-decoration: none }` — dead rule with no `<a>` targets.
+- Updated `.comparison-pair-list a:focus-visible` → `.comparison-pair-list li:focus-visible`.
+
+*js/app.js:*
+- Added `aria-current` toggling to the comparison pair click handler: all `<li>` items in `comparisonPairList` have `aria-current` removed on each click, then `aria-current="true"` is set on the clicked item. This makes the CSS active-state rule functional.
+- Added `role="button"`, `tabindex="0"`, and a `keydown` event listener to each comparison pair `<li>`. The keydown handler triggers `.click()` on Enter or Space, making the pairs operable by keyboard (WCAG 2.1 SC 2.1.1).
+- Added the same three attributes and handler to each verb-explorer tab `<li>` for the same reason.
+
+*js/graph.js:*
+- Removed nav-toggle code that had been accidentally placed at the top of the file. It belonged in imprint.html (as an inline script) and would have attached a duplicate event listener to the hamburger button on `index.html`.
+

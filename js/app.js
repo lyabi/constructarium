@@ -13,8 +13,8 @@ navToggle.addEventListener('click', function () {
 });
 
 // Damit die Navigation bei mobilen Geräten wieder verschwindet
-navLinks.forEach(function(link) {
-  link.addEventListener('click', function() {
+navLinks.forEach(function (link) {
+  link.addEventListener('click', function () {
     primaryNavList.classList.remove('nav-open');
     navToggle.setAttribute('aria-expanded', 'false');
   });
@@ -74,7 +74,17 @@ document.addEventListener('DOMContentLoaded', async function () { //JS startet e
     const listItem = document.createElement('li');
     listItem.textContent = pair.contrast_type;
     comparisonPairList.appendChild(listItem);
+    listItem.setAttribute('role', 'button');
+    listItem.setAttribute('tabindex', '0');
+    listItem.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        listItem.click();
+      }
+    });
     listItem.addEventListener('click', function (event) {
+      comparisonPairList.querySelectorAll('li').forEach(function (s) { s.removeAttribute('aria-current'); }); // aria-current von allen Einträgen entfernen
+      listItem.setAttribute('aria-current', 'true'); // aria-current auf das angeklickte <li> setzen → CSS hebt es hervor
       const constructionA = constructions.find(function (construction) { return construction.id === pair.construction_id_a; }).name;
       const constructionB = constructions.find(function (construction) { return construction.id === pair.construction_id_b; }).name;
       constructionATitle.textContent = constructionA;
@@ -95,10 +105,18 @@ document.addEventListener('DOMContentLoaded', async function () { //JS startet e
   uniqueSetIds.forEach(function (setId) {
     const listItem = document.createElement('li');
     const setLink = document.createElement('span');
-    setLink.textContent = setId.replace('_set', '') //Entfernt "_set" aus dem set_id Wert --> nur noch "slice" und "cook"
+    setLink.textContent = setId.replace('_set', ''); //Entfernt "_set" aus dem set_id Wert --> nur noch "slice" und "cook"
     if (setId === 'slice_set') { setLink.classList.add('active'); } //Erster Button beim Laden aktiv markieren
     listItem.appendChild(setLink); //Hinzufügen des Links zum Listenelement
     crossSetList.appendChild(listItem);
+    listItem.setAttribute('role', 'button');
+    listItem.setAttribute('tabindex', '0');
+    listItem.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        listItem.click();
+      }
+    });
     listItem.addEventListener('click', function (event) {
       crossSetList.querySelectorAll('span').forEach(function (s) { s.classList.remove('active'); }); //Aktiv-Markierung von allen Buttons entfernen
       setLink.classList.add('active'); //Aktiv-Markierung auf den angeklickten Button setzen
