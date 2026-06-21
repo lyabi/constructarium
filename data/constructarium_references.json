@@ -1,5 +1,17 @@
 [
   {
+    "id": "croft_2007",
+    "author": "Croft, W.",
+    "year": 2007,
+    "title": "Construction Grammar",
+    "type": "chapter",
+    "editors": "Geeraerts, D. & Cuykens, H. (eds.)",
+    "book_title": "The Oxford Handbook of Cognitive Linguistics",
+    "publisher": "Oxford University Press",
+    "place": "Oxford",
+    "url_doi": ""
+  },
+  {
     "id": "davies_2008",
     "author": "Davies, M.",
     "year": "2008–",
@@ -13,6 +25,20 @@
     "year": 1995,
     "title": "Constructions: A Construction Grammar Approach to Argument Structure",
     "type": "book",
+    "publisher": "University of Chicago Press",
+    "place": "Chicago",
+    "url_doi": ""
+  },
+  {
+    "id": "goldberg_jackendoff_2004",
+    "author": "Goldberg, A. E. & Jackendoff, R.",
+    "year": 2004,
+    "title": "The English resultative as a family of constructions",
+    "type": "article",
+    "journal": "Language",
+    "volume": "80",
+    "issue": "3",
+    "pages": "532-568",
     "url_doi": ""
   },
   {
@@ -21,6 +47,8 @@
     "year": 2005,
     "title": "Constructions at Work: The Nature of Generalization in Language",
     "type": "book",
+    "publisher": "Oxford University Press",
+    "place": "Oxford",
     "url_doi": ""
   },
   {
@@ -29,6 +57,10 @@
     "year": 2009,
     "title": "The nature of generalization in language",
     "type": "article",
+    "journal": "Cognitive Linguistics",
+    "volume": "20",
+    "issue": "1",
+    "pages": "93-127",
     "url_doi": ""
   },
   {
@@ -37,6 +69,10 @@
     "year": 2020,
     "title": "English comparative correlative constructions: a usage-based account",
     "type": "article",
+    "journal": "Open Linguistics",
+    "volume": "6",
+    "issue": "1",
+    "pages": "196-215",
     "url_doi": "https://doi.org/10.1515/opli-2020-0012"
   },
   {
@@ -45,6 +81,8 @@
     "year": 2013,
     "title": "The Oxford Handbook of Construction Grammar",
     "type": "edited volume",
+    "publisher": "Oxford University Press",
+    "place": "Oxford",
     "url_doi": ""
   },
   {
@@ -53,6 +91,10 @@
     "year": 1997,
     "title": "Twistin' the Night Away",
     "type": "article",
+    "journal": "Language",
+    "volume": "73",
+    "issue": "3",
+    "pages": "534-559",
     "url_doi": "https://www.jstor.org/stable/415883"
   },
   {
@@ -61,6 +103,10 @@
     "year": 1999,
     "title": "Grammatical Constructions and Linguistic Generalizations: The What's X Doing Y? Construction",
     "type": "article",
+    "journal": "Language",
+    "volume": "75",
+    "issue": "1",
+    "pages": "1-33",
     "url_doi": "http://www.jstor.org/stable/417472"
   },
   {
@@ -68,7 +114,9 @@
     "author": "Lambrecht, K.",
     "year": 1990,
     "title": "'What, me worry?' – 'Mad Magazine Sentences' Revisited",
-    "type": "article",
+    "type": "proceedings",
+    "journal": "Proceedings of the Sixteenth Annual Meeting of the Berkeley Linguistics Society",
+    "pages": "215-228",
     "url_doi": ""
   },
   {
@@ -77,6 +125,7 @@
     "year": 2023,
     "title": "The English Binominal Noun Phrase: A Cognitive-Functional Approach",
     "type": "book",
-    "url_doi": ""
+    "publisher": "Cambridge University Press",
+    "url_doi": "https://doi.org/10.1017/9781108921893"
   }
 ]

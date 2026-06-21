@@ -5,12 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Constructarium</title>
-  <!-- Load the three project fonts before the stylesheet uses them for role-based typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <meta name="description" content="Constructarium is an interactive tool for exploring English grammatical constructions through guided comparison, inheritance networks, and cross-construction verb sets.">
   <!-- First CSS step: link one base stylesheet before adding more specific component styling -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -57,51 +52,51 @@
 
     <!-- Index page section: grouped overview of all constructions -->
     <section id="construction-index" aria-labelledby="construction-index-title">
-      <h1 id="construction-index-title">Construction Index</h1>
+      <h2 id="construction-index-title">Construction Index</h2>
       <p>Browse all constructions grouped by cluster.</p>
 
       <section aria-labelledby="argument-structure-title">
-        <h2 id="argument-structure-title">Argument Structure</h2>
+        <h3 id="argument-structure-title">Argument Structure</h3>
         <!-- Each cluster uses a list because it will eventually contain multiple construction cards -->
         <ul class="construction-card-list">
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-intransitive-cxn">Intransitive Construction</a></h3>
+              <h4><a href="#detail-intransitive-cxn">Intransitive Construction</a></h4>
               <p class="notation">NP VP</p>
               <p>X acts</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-transitive-cxn">Transitive Construction</a></h3>
+              <h4><a href="#detail-transitive-cxn">Transitive Construction</a></h4>
               <p class="notation">NP VP NP</p>
               <p>X acts on Y</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-ditransitive-cxn">Ditransitive Construction</a></h3>
+              <h4><a href="#detail-ditransitive-cxn">Ditransitive Construction</a></h4>
               <p class="notation">NP VP NP NP</p>
               <p>X causes Y to receive Z</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-caused-motion-cxn">Caused Motion Construction</a></h3>
+              <h4><a href="#detail-caused-motion-cxn">Caused Motion Construction</a></h4>
               <p class="notation">NP V NP PP</p>
               <p>X causes Y to move Z</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-resultative-cxn">Resultative Construction</a></h3>
+              <h4><a href="#detail-resultative-cxn">Resultative Construction</a></h4>
               <p class="notation">NP V NP XP</p>
               <p>X causes Y to become Z</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-passive-cxn">Passive Construction</a></h3>
+              <h4><a href="#detail-passive-cxn">Passive Construction</a></h4>
               <p class="notation">NP aux V (by NP)</p>
               <p>to make undergoer topical and/or actor non-topical</p>
             </article>
@@ -110,19 +105,19 @@
       </section>
 
       <section aria-labelledby="motion-activity-title">
-        <h2 id="motion-activity-title">Motion and Activity</h2>
+        <h3 id="motion-activity-title">Motion and Activity</h3>
         <!-- Same list pattern repeated here so all clusters share one content structure -->
         <ul class="construction-card-list">
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-way-cxn">Way Construction</a></h3>
+              <h4><a href="#detail-way-cxn">Way Construction</a></h4>
               <p class="notation">NP V NP.poss way PP</p>
               <p>X moves to a goal by means of or despite the action denoted by V</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-time-away-cxn">Time Away Construction</a></h3>
+              <h4><a href="#detail-time-away-cxn">Time Away Construction</a></h4>
               <p class="notation">NP V NP.poss time away</p>
               <p>X spends or wastes a time period doing the action denoted by V</p>
             </article>
@@ -131,19 +126,19 @@
       </section>
 
       <section aria-labelledby="fixed-pragmatic-title">
-        <h2 id="fixed-pragmatic-title">Fixed Pragmatic</h2>
+        <h3 id="fixed-pragmatic-title">Fixed Pragmatic</h3>
         <!-- Cards stay inside a list item, with the article as the self-contained card content -->
         <ul class="construction-card-list">
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-wxdy-cxn">What's X Doing Y? Construction</a></h3>
+              <h4><a href="#detail-wxdy-cxn">What's X Doing Y? Construction</a></h4>
               <p class="notation">What be NP VP[doing XP]</p>
               <p>Speaker signals that something is out of place or disapproved of</p>
             </article>
           </li>
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-incredulity-cxn">Incredulity Response Construction</a></h3>
+              <h4><a href="#detail-incredulity-cxn">Incredulity Response Construction</a></h4>
               <p class="notation">NP[acc] NP?</p>
               <p>Speaker expresses disbelief about an identification or attribution</p>
             </article>
@@ -152,12 +147,12 @@
       </section>
 
       <section aria-labelledby="clause-combining-title">
-        <h2 id="clause-combining-title">Clause-Combining</h2>
+        <h3 id="clause-combining-title">Clause-Combining</h3>
         <!-- Keeping the cluster sections structurally consistent will simplify later rendering -->
         <ul class="construction-card-list">
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-comparative-correlative-cxn">Comparative Correlative Construction</a></h3>
+              <h4><a href="#detail-comparative-correlative-cxn">Comparative Correlative Construction</a></h4>
               <p class="notation">the Comp-XP1, the Comp-XP2</p>
               <p>linked independent and dependent variables</p>
             </article>
@@ -166,12 +161,12 @@
       </section>
 
       <section aria-labelledby="np-internal-title">
-        <h2 id="np-internal-title">NP-Internal</h2>
+        <h3 id="np-internal-title">NP-Internal</h3>
         <!-- This mirrors the other cluster sections so the card structure stays consistent -->
         <ul class="construction-card-list">
           <li>
             <article class="construction-card">
-              <h3><a href="#detail-binominal-np-cxn">Binominal Noun Phrase Construction</a></h3>
+              <h4><a href="#detail-binominal-np-cxn">Binominal Noun Phrase Construction</a></h4>
               <p class="notation">Det1 N1 of Det2 N2</p>
               <p>N₁ evaluates N₂</p>
             </article>
@@ -182,7 +177,7 @@
 
     <!-- Detail page section: one anchored article per construction so the page works before JS exists -->
     <section id="construction-detail" aria-labelledby="construction-detail-title">
-      <h1 id="construction-detail-title">Construction Details</h1>
+      <h2 id="construction-detail-title">Construction Details</h2>
       <p>Each construction below has its own static anchor so links can jump to the correct detail article.</p>
 
       <!-- This quick index helps navigate the longer static detail area in the HTML-only phase -->
@@ -203,18 +198,16 @@
 
       <!-- Repeating the same article pattern for every construction keeps the structure predictable -->
       <article id="detail-intransitive-cxn" aria-labelledby="detail-intransitive-cxn-title">
-        <h2 id="detail-intransitive-cxn-title">Intransitive Construction</h2>
+        <h3 id="detail-intransitive-cxn-title">Intransitive Construction</h3>
         <p>No alternative names listed.</p>
         <p class="notation">Phrase structure: NP VP</p>
         <p class="notation">Syntactic function: Subj V</p>
         <p>Meaning label: action</p>
-        <p>Meaning description: X acts</p>
-        <p>No notes listed.</p>
-        <p>Key reference: Hoffmann and Trousdale (eds.) 2013</p>
+        <p>Meaning description: X acts</p>        <p>Key reference: Hoffmann and Trousdale (eds.) 2013</p>
         <p>No guided contrast pair is currently defined for this construction.</p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <p>No parent or child edges are listed in the current inheritance data.</p>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -253,7 +246,7 @@
             <p>COCA 2019, FIC, SouthernRev</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <ul class="cross-construction-list">
           <li>
             <blockquote>
@@ -272,16 +265,14 @@
       </article>
 
       <article id="detail-transitive-cxn" aria-labelledby="detail-transitive-cxn-title">
-        <h2 id="detail-transitive-cxn-title">Transitive Construction</h2>
+        <h3 id="detail-transitive-cxn-title">Transitive Construction</h3>
         <p>No alternative names listed.</p>
         <p class="notation">Phrase structure: NP VP NP</p>
         <p class="notation">Syntactic function: Subj V Obj</p>
         <p>Meaning label: transitive action</p>
-        <p>Meaning description: X acts on Y</p>
-        <p>No notes listed.</p>
-        <p>Key reference: Hoffmann and Trousdale (eds.) 2013</p>
+        <p>Meaning description: X acts on Y</p>        <p>Key reference: Hoffmann and Trousdale (eds.) 2013</p>
         <p><a href="#comparison-view">View guided contrasts</a></p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <p>No parent construction is listed.</p>
         <ul>
           <li>Ditransitive Construction - instance</li>
@@ -289,7 +280,7 @@
           <li>Resultative Construction - instance</li>
           <li>Passive Construction - discourse variant</li>
         </ul>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -328,7 +319,7 @@
             <p>COCA 2012, BLOG, gossipcop.com</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <ul class="cross-construction-list">
           <li>
             <blockquote>
@@ -346,20 +337,18 @@
       </article>
 
       <article id="detail-ditransitive-cxn" aria-labelledby="detail-ditransitive-cxn-title">
-        <h2 id="detail-ditransitive-cxn-title">Ditransitive Construction</h2>
+        <h3 id="detail-ditransitive-cxn-title">Ditransitive Construction</h3>
         <p>Alternative name: Double Object Construction</p>
         <p class="notation">Phrase structure: NP VP NP NP</p>
         <p class="notation">Syntactic function: Subj V Obj1 Obj2</p>
         <p>Meaning label: transfer (intended or actual)</p>
-        <p>Meaning description: X causes Y to receive Z</p>
-        <p>No notes listed.</p>
-        <p>Key reference: Goldberg 1995</p>
+        <p>Meaning description: X causes Y to receive Z</p>        <p>Key reference: Goldberg 1995</p>
         <p><a href="#comparison-view">View guided contrasts</a></p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <ul>
           <li>Parent: Transitive Construction - instance</li>
         </ul>
-        <h3>Senses</h3>
+        <h4>Senses</h4>
         <ul>
           <li>
             <strong>Transfer</strong> — actual or intended transfer of possession (X causes Y to receive Z)
@@ -382,7 +371,7 @@
             <p>Goldberg 1995: 40</p>
           </li>
         </ul>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -416,7 +405,7 @@
             <p>Goldberg 1995</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <ul class="cross-construction-list">
           <li>
             <blockquote>
@@ -434,22 +423,20 @@
       </article>
 
       <article id="detail-caused-motion-cxn" aria-labelledby="detail-caused-motion-cxn-title">
-        <h2 id="detail-caused-motion-cxn-title">Caused Motion Construction</h2>
+        <h3 id="detail-caused-motion-cxn-title">Caused Motion Construction</h3>
         <p>No alternative names listed.</p>
         <p class="notation">Phrase structure: NP V NP PP</p>
         <p class="notation">Syntactic function: Subj V Obj Obl</p>
         <p>Meaning label: caused motion</p>
-        <p>Meaning description: X causes Y to move Z</p>
-        <p>No notes listed.</p>
-        <p>Key reference: Goldberg 1995</p>
+        <p>Meaning description: X causes Y to move Z</p>        <p>Key reference: Goldberg 1995</p>
         <p><a href="#comparison-view">View guided contrasts</a></p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <ul>
           <li>Parent: Transitive Construction - instance</li>
           <li>Child: Way Construction - instance</li>
           <li>Child: Resultative Construction - metaphorical extension</li>
         </ul>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -491,7 +478,7 @@
             <p>Goldberg 1995</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <ul class="cross-construction-list">
           <li>
             <blockquote>
@@ -503,21 +490,19 @@
       </article>
 
       <article id="detail-resultative-cxn" aria-labelledby="detail-resultative-cxn-title">
-        <h2 id="detail-resultative-cxn-title">Resultative Construction</h2>
+        <h3 id="detail-resultative-cxn-title">Resultative Construction</h3>
         <p>No alternative names listed.</p>
         <p class="notation">Phrase structure: NP V NP XP</p>
         <p class="notation">Syntactic function: Subj V Obj Xcomp</p>
         <p>Meaning label: caused change of state</p>
-        <p>Meaning description: X causes Y to become Z</p>
-        <p>No notes listed.</p>
-        <p>Key reference: Goldberg 1995</p>
+        <p>Meaning description: X causes Y to become Z</p>        <p>Key reference: Goldberg 1995</p>
         <p><a href="#comparison-view">View guided contrasts</a></p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <ul>
           <li>Parent: Transitive Construction - instance</li>
           <li>Parent: Caused Motion Construction - metaphorical extension</li>
         </ul>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -556,7 +541,7 @@
             <p>Goldberg 1995</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <ul class="cross-construction-list">
           <li>
             <blockquote>
@@ -574,20 +559,18 @@
       </article>
 
       <article id="detail-passive-cxn" aria-labelledby="detail-passive-cxn-title">
-        <h2 id="detail-passive-cxn-title">Passive Construction</h2>
+        <h3 id="detail-passive-cxn-title">Passive Construction</h3>
         <p>No alternative names listed.</p>
         <p class="notation">Phrase structure: NP aux V (by NP)</p>
         <p class="notation">Syntactic function: Subj aux VPpp (PPby)</p>
         <p>Meaning label: discourse-pragmatic</p>
-        <p>Meaning description: to make undergoer topical and/or actor non-topical</p>
-        <p>No notes listed.</p>
-        <p>Key reference: Goldberg 2005</p>
+        <p>Meaning description: to make undergoer topical and/or actor non-topical</p>        <p>Key reference: Goldberg 2005</p>
         <p>No guided contrast pair is currently defined for this construction.</p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <ul>
           <li>Parent: Transitive Construction - discourse variant</li>
         </ul>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -624,26 +607,24 @@
             <p>COCA 2010, SPOK, NBC_MeetPress</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <p>No cross-construction verb-set examples are listed for this construction.</p>
       </article>
 
       <article id="detail-way-cxn" aria-labelledby="detail-way-cxn-title">
-        <h2 id="detail-way-cxn-title">Way Construction</h2>
+        <h3 id="detail-way-cxn-title">Way Construction</h3>
         <p>No alternative names listed.</p>
         <p class="notation">Phrase structure: NP V NP.poss way PP</p>
         <p class="notation">Syntactic function: Subj V Obj[way] Obl</p>
         <p>Meaning label: self-propelled motion</p>
-        <p>Meaning description: X moves to a goal by means of or despite the action denoted by V</p>
-        <p>No notes listed.</p>
-        <p>Key reference: Goldberg 1995</p>
+        <p>Meaning description: X moves to a goal by means of or despite the action denoted by V</p>        <p>Key reference: Goldberg 1995</p>
         <p>No guided contrast pair is currently defined for this construction.</p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <ul>
           <li>Parent: Caused Motion Construction - instance</li>
           <li>Child: Time Away Construction - instance</li>
         </ul>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -667,7 +648,7 @@
             <p>Goldberg 2005</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <ul class="cross-construction-list">
           <li>
             <blockquote>
@@ -685,20 +666,18 @@
       </article>
 
       <article id="detail-time-away-cxn" aria-labelledby="detail-time-away-cxn-title">
-        <h2 id="detail-time-away-cxn-title">Time Away Construction</h2>
+        <h3 id="detail-time-away-cxn-title">Time Away Construction</h3>
         <p>No alternative names listed.</p>
         <p class="notation">Phrase structure: NP V NP.poss time away</p>
         <p class="notation">Syntactic function: Subj V Obj[time] Obl[away]</p>
         <p>Meaning label: temporal expenditure</p>
-        <p>Meaning description: X spends or wastes a time period doing the action denoted by V</p>
-        <p>No notes listed.</p>
-        <p>Key reference: Jackendoff 1997</p>
+        <p>Meaning description: X spends or wastes a time period doing the action denoted by V</p>        <p>Key reference: Jackendoff 1997</p>
         <p>No guided contrast pair is currently defined for this construction.</p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <ul>
           <li>Parent: Way Construction - instance</li>
         </ul>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -719,23 +698,21 @@
             <p>Jackendoff 1997</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <p>No cross-construction verb-set examples are listed for this construction.</p>
       </article>
 
       <article id="detail-wxdy-cxn" aria-labelledby="detail-wxdy-cxn-title">
-        <h2 id="detail-wxdy-cxn-title">What's X Doing Y? Construction</h2>
+        <h3 id="detail-wxdy-cxn-title">What's X Doing Y? Construction</h3>
         <p>No alternative names listed.</p>
         <p class="notation">Phrase structure: What be NP VP[doing XP]</p>
         <p class="notation">Syntactic function: Subj aux Obj Pred</p>
         <p>Meaning label: incongruity/disapproval</p>
-        <p>Meaning description: Speaker signals that something is out of place or disapproved of</p>
-        <p>No notes listed.</p>
-        <p>Key reference: Kay and Fillmore 1999</p>
+        <p>Meaning description: Speaker signals that something is out of place or disapproved of</p>        <p>Key reference: Kay and Fillmore 1999</p>
         <p>No guided contrast pair is currently defined for this construction.</p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <p>No parent or child edges are listed in the current inheritance data.</p>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -756,23 +733,21 @@
             <p>Kay and Fillmore 1999</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <p>No cross-construction verb-set examples are listed for this construction.</p>
       </article>
 
       <article id="detail-incredulity-cxn" aria-labelledby="detail-incredulity-cxn-title">
-        <h2 id="detail-incredulity-cxn-title">Incredulity Response Construction</h2>
+        <h3 id="detail-incredulity-cxn-title">Incredulity Response Construction</h3>
         <p>Alternative name: Mad Magazine Construction</p>
         <p class="notation">Phrase structure: NP[acc] NP?</p>
         <p class="notation">Syntactic function: NP Pred NP</p>
         <p>Meaning label: incredulity</p>
-        <p>Meaning description: Speaker expresses disbelief about an identification or attribution</p>
-        <p>No notes listed.</p>
-        <p>Key reference: Lambrecht 1990</p>
+        <p>Meaning description: Speaker expresses disbelief about an identification or attribution</p>        <p>Key reference: Lambrecht 1990</p>
         <p>No guided contrast pair is currently defined for this construction.</p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <p>No parent or child edges are listed in the current inheritance data.</p>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -795,12 +770,12 @@
             <p>Lambrecht 1990</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <p>No cross-construction verb-set examples are listed for this construction.</p>
       </article>
 
       <article id="detail-comparative-correlative-cxn" aria-labelledby="detail-comparative-correlative-cxn-title">
-        <h2 id="detail-comparative-correlative-cxn-title">Comparative Correlative Construction</h2>
+        <h3 id="detail-comparative-correlative-cxn-title">Comparative Correlative Construction</h3>
         <p>Alternative names: The Xer the Yer Construction; Covariational Conditional Construction; Proportional
           Correlative</p>
         <p class="notation">Phrase structure: the Comp-XP1, the Comp-XP2</p>
@@ -810,9 +785,9 @@
         <p>Notes: biclausal; clause-combining level exceeds scope of syntactic_function column</p>
         <p>Key reference: Hoffmann et al. 2020</p>
         <p>No guided contrast pair is currently defined for this construction.</p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <p>No parent or child edges are listed in the current inheritance data.</p>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -839,12 +814,12 @@
             <p>BNC W_fict_prose EFW</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <p>No cross-construction verb-set examples are listed for this construction.</p>
       </article>
 
       <article id="detail-binominal-np-cxn" aria-labelledby="detail-binominal-np-cxn-title">
-        <h2 id="detail-binominal-np-cxn-title">Binominal Noun Phrase Construction</h2>
+        <h3 id="detail-binominal-np-cxn-title">Binominal Noun Phrase Construction</h3>
         <p>Alternative name: That Fool of a Doctor Construction</p>
         <p class="notation">Phrase structure: Det1 N1 of Det2 N2</p>
         <p class="notation">Syntactic function: not applicable for this NP-internal construction summary</p>
@@ -853,9 +828,9 @@
         <p>Notes: NP-internal construction; no clausal argument roles</p>
         <p>Key reference: tenWolde 2023</p>
         <p>No guided contrast pair is currently defined for this construction.</p>
-        <h3>Inheritance</h3>
+        <h4>Inheritance</h4>
         <p>No parent or child edges are listed in the current inheritance data.</p>
-        <h3>Examples</h3>
+        <h4>Examples</h4>
         <ul class="example-list">
           <li>
             <blockquote>
@@ -879,49 +854,49 @@
             <p>NOW</p>
           </li>
         </ul>
-        <h3>Cross-Construction Uses</h3>
+        <h4>Cross-Construction Uses</h4>
         <p>No cross-construction verb-set examples are listed for this construction.</p>
       </article>
     </section>
 
     <!-- Core feature section: guided side-by-side comparison -->
     <section id="comparison-view" aria-labelledby="comparison-view-title">
-      <h1 id="comparison-view-title">Comparison View</h1>
+      <h2 id="comparison-view-title">Comparison View</h2>
       <p>Guided comparison: same verb, different constructions.</p>
 
       <!-- Wrapper for the pair list and selected comparison panel -->
       <div class="comparison-layout">
         <!-- aside holds the selectable list of contrast pairs -->
         <aside aria-labelledby="comparison-pairs-title">
-          <h2 id="comparison-pairs-title">Pairs</h2>
+          <h3 id="comparison-pairs-title">Pairs</h3>
           <!-- List is appropriate because the user chooses from several parallel contrast pairs -->
           <ul class="comparison-pair-list" id="comparison-pair-list"></ul>
         </aside>
 
         <section id="comparison-pair-detail" aria-labelledby="comparison-pair-title">
-          <h2 id="comparison-pair-title">Selected Contrast Pair</h2>
+          <h3 id="comparison-pair-title">Selected Contrast Pair</h3>
 
           <!-- Inner wrapper groups the two compared constructions side by side in concept -->
           <div class="comparison-sentences">
             <article aria-labelledby="construction-a-title">
-              <h3 id="construction-a-title">Transitive Construction</h3>
+              <h4 id="construction-a-title">Transitive Construction</h4>
               <p><a id="comparison-link-a" href="#detail-transitive-cxn">He sliced the bread.</a></p>
             </article>
 
             <article aria-labelledby="construction-b-title">
-              <h3 id="construction-b-title">Caused Motion Construction</h3>
+              <h4 id="construction-b-title">Caused Motion Construction</h4>
               <p><a id="comparison-link-b" href="#detail-caused-motion-cxn">Pat sliced the carrots into the salad.</a>
               </p>
             </article>
           </div>
 
           <section aria-labelledby="contrast-type-title">
-            <h3 id="contrast-type-title">Contrast Type</h3>
+            <h4 id="contrast-type-title">Contrast Type</h4>
             <p id="comparison-contrast-type">transitive vs. caused motion</p>
           </section>
 
           <section aria-labelledby="contrast-explanation-title">
-            <h3 id="contrast-explanation-title">Explanation</h3>
+            <h4 id="contrast-explanation-title">Explanation</h4>
             <p id="comparison-explanation">
               Same verb; transitive encodes simple action on a Patient with no
               specified endpoint; caused-motion adds a Goal PP, encoding the
@@ -934,34 +909,49 @@
 
     <!-- Network page section: graph area plus legend and standalone nodes -->
     <section id="inheritance-network" aria-labelledby="inheritance-network-title">
-      <h1 id="inheritance-network-title">Inheritance Network</h1>
+      <h2 id="inheritance-network-title">Inheritance Network</h2>
       <p>Directed graph of constructional inheritance relations.</p>
 
       <section aria-labelledby="inheritance-legend-title">
-        <h2 id="inheritance-legend-title">Legend</h2>
+        <h3 id="inheritance-legend-title">Legend</h3>
         <!-- Legend items are also a simple list of relation types -->
         <ul class="legend-list">
-          <li>Instance</li>
-          <li>Metaphorical extension</li>
-          <li>Discourse variant</li>
+          <li>
+            <svg class="legend-line-sample" width="40" height="14" aria-hidden="true"><line x1="2" y1="7" x2="38" y2="7" stroke="#9baab8" stroke-width="2.5"/></svg>
+            Instance
+          </li>
+          <li>
+            <svg class="legend-line-sample" width="40" height="14" aria-hidden="true"><line x1="2" y1="7" x2="38" y2="7" stroke="#c47820" stroke-width="2.5" stroke-dasharray="7 5"/></svg>
+            Metaphorical extension
+          </li>
+          <li>
+            <svg class="legend-line-sample" width="40" height="14" aria-hidden="true"><line x1="2" y1="7" x2="38" y2="7" stroke="#89a88a" stroke-width="2.5" stroke-dasharray="4 4"/></svg>
+            Construal variant
+          </li>
+          <li>
+            <svg class="legend-line-sample" width="40" height="14" aria-hidden="true"><line x1="2" y1="7" x2="38" y2="7" stroke="#2d3fb8" stroke-width="2.5" stroke-dasharray="2 4"/></svg>
+            Related to
+          </li>
+          <li>
+            <svg class="legend-line-sample" width="40" height="14" aria-hidden="true"><line x1="2" y1="7" x2="38" y2="7" stroke="#6030a0" stroke-width="2.5" stroke-dasharray="10 4"/></svg>
+            Subpart
+          </li>
+          <li>
+            <svg class="legend-line-sample" width="40" height="14" aria-hidden="true"><line x1="2" y1="7" x2="38" y2="7" stroke="#b82055" stroke-width="2.5" stroke-dasharray="8 3 2 3"/></svg>
+            Polysemy
+          </li>
         </ul>
       </section>
 
       <section aria-labelledby="graph-area-title">
-        <h2 id="graph-area-title">Graph Area</h2>
+        <h3 id="graph-area-title">Graph Area</h3>
         <div id="inheritance-graph" aria-label="Inheritance graph"></div>
-      </section>
-
-      <section aria-labelledby="standalone-constructions-title">
-        <h2 id="standalone-constructions-title">Standalone Constructions</h2>
-        <!-- Separate list for isolated constructions keeps them distinct from the graph area -->
-        <ul class="standalone-construction-list" id="standalone-construction-list"></ul>
       </section>
     </section>
 
     <!-- Verb Explorer section: tab-like navigation and data tables -->
     <section id="verb-explorer" aria-labelledby="verb-explorer-title">
-      <h1 id="verb-explorer-title">Verb Explorer</h1>
+      <h2 id="verb-explorer-title">Verb Explorer</h2>
       <p>Compare how the same verb appears in different constructions.</p>
 
       <!-- Separate nav for switching between verb-set areas -->
@@ -971,7 +961,7 @@
       </nav>
 
       <section id="slice-set" aria-labelledby="slice-set-title">
-        <h2 id="slice-set-title">slice</h2>
+        <h3 id="slice-set-title">slice</h3>
         <!-- table is appropriate here because the requirements describe row/column data -->
         <table>
           <caption>Verb set entries for slice</caption>
@@ -987,7 +977,7 @@
       </section>
 
       <section id="cook-set" aria-labelledby="cook-set-title" hidden>
-        <h2 id="cook-set-title">cook</h2>
+        <h3 id="cook-set-title">cook</h3>
         <!-- second verb-set table for the cook set -->
         <table>
           <caption>Verb set entries for cook</caption>
@@ -1005,18 +995,44 @@
 
     <!-- Final section: project description and bibliography -->
     <section id="about-sources" aria-labelledby="about-sources-title">
-      <h1 id="about-sources-title">About and Sources</h1>
+      <h2 id="about-sources-title">About and Sources</h2>
 
       <section aria-labelledby="about-title">
-        <h2 id="about-title">About</h2>
+        <h3 id="about-title">About</h3>
         <p>
           Constructarium presents English grammatical constructions for teaching
           and exploration, with comparison as the primary way into the data.
         </p>
       </section>
 
+      <section aria-labelledby="what-is-cxg-title">
+        <h3 id="what-is-cxg-title">What is Construction Grammar?</h3>
+        <p>
+          Construction Grammar (CxG) is one approach within the wider paradigm of Cognitive Linguistics. At its core
+          is the assumption that language is stored as constructions or <b>"systematic collections of form-function
+          pairings"</b> (Goldberg 2009: 93). Importantly, in accordance with usage-based theory, these constructions
+          are learned through language use and are not part of innate grammar knowledge in the Chomskian sense (Croft
+          2007: 499-503; Goldberg 2005: 14-15; 2009: 93). Additionally, as a result of the form-meaning fixation,
+          there is no strict division between lexicon and grammar rules but rather a <b>syntax-lexicon continuum</b>
+          (Goldberg &amp; Jackendoff 2004: 532).
+        </p>
+      </section>
+
+      <section aria-labelledby="what-are-constructions-title">
+        <h3 id="what-are-constructions-title">What are Constructions?</h3>
+        <p>
+          Constructions themselves can be of different form, "including partially or fully filled words, idioms, and
+          general linguistic patterns" (Goldberg 2009: 94). While there is still ongoing discussion as to what
+          constitutes a construction, most theorists agree on the following construction criterion: "Any linguistic
+          pattern is recognized as a construction as long as some aspect of its form or function is <b>not strictly
+          predictable</b> from its component parts or from other constructions recognized to exist" (Goldberg 2005:
+          5). Additionally, to account for structures which are predictable but still stored separately because of
+          their conventionality, the criterion of <b>"sufficient frequency"</b> (Goldberg 2005: 5) was added.
+        </p>
+      </section>
+
       <section aria-labelledby="sources-title">
-        <h2 id="sources-title">References</h2>
+        <h3 id="sources-title">References</h3>
         <!-- References naturally form a list and will later be populated from the data file -->
         <ul class="reference-list" id="reference-list"></ul>
       </section>

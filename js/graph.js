@@ -73,6 +73,61 @@ document.addEventListener('DOMContentLoaded', async function () {
             {
                 selector: 'node[cluster = "np_internal"]',
                 style: { 'background-color': '#FFF0CC' }
+            },
+            {
+                selector: 'edge',
+                style: {
+                    'width': 2,
+                    'curve-style': 'bezier',
+                    'target-arrow-shape': 'triangle',
+                    'line-color': '#9baab8',
+                    'target-arrow-color': '#9baab8'
+                }
+            },
+            {
+                selector: 'edge[relation = "metaphorical_extension"]',
+                style: {
+                    'line-color': '#c47820',
+                    'target-arrow-color': '#c47820',
+                    'line-style': 'dashed',
+                    'line-dash-pattern': [7, 5]
+                }
+            },
+            {
+                selector: 'edge[relation = "construal_variant"]',
+                style: {
+                    'line-color': '#89a88a',
+                    'target-arrow-color': '#89a88a',
+                    'line-style': 'dashed',
+                    'line-dash-pattern': [4, 4]
+                }
+            },
+            {
+                selector: 'edge[relation = "related_to"]',
+                style: {
+                    'line-color': '#2d3fb8',
+                    'target-arrow-color': '#2d3fb8',
+                    'line-style': 'dashed',
+                    'line-dash-pattern': [2, 4]
+                }
+            },
+            {
+                selector: 'edge[relation = "subpart"]',
+                style: {
+                    'line-color': '#6030a0',
+                    'target-arrow-color': '#6030a0',
+                    'line-style': 'dashed',
+                    'line-dash-pattern': [10, 4]
+                }
+            },
+            {
+                selector: 'edge[relation = "polysemy"]',
+                style: {
+                    'line-color': '#b82055',
+                    'target-arrow-color': '#b82055',
+                    'line-style': 'dashed',
+                    'line-dash-pattern': [8, 3, 2, 3]
+                }
             }
         ]
     });

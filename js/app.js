@@ -13,9 +13,32 @@ document.addEventListener('DOMContentLoaded', async function () { //JS startet e
 
   const referenceList = document.querySelector('#reference-list');
   references.forEach(function (reference) {
-    const listItem = document.createElement('li'); //Erstellen eines Listenelements
-    listItem.textContent = `${reference.author} (${reference.year}). ${reference.title}`; //Textinhalt des Listenelements
-    referenceList.appendChild(listItem); //Hinzufügen des Listenelements zur Referenzliste
+    const listItem = document.createElement('li');
+    let text = '';
+    if (reference.type === 'article') {
+      text = `${reference.author} (${reference.year}). "${reference.title}". ${reference.journal} ${reference.volume}.${reference.issue}: ${reference.pages}.`;
+    } else if (reference.type === 'book') {
+      text = `${reference.author} (${reference.year}). ${reference.title}. ${reference.place}: ${reference.publisher}.`;
+    } else if (reference.type === 'edited volume') {
+      text = `${reference.author} (${reference.year}). ${reference.title}. ${reference.place}: ${reference.publisher}.`;
+    } else if (reference.type === 'chapter') {
+      text = `${reference.author} (${reference.year}). "${reference.title}". In: ${reference.editors} ${reference.book_title}. ${reference.place}: ${reference.publisher}.`;
+    } else if (reference.type === 'proceedings') {
+      text = `${reference.author} (${reference.year}). "${reference.title}". ${reference.journal}: ${reference.pages}.`;
+    } else if (reference.type === 'corpus') {
+      text = `${reference.author} (${reference.year}). ${reference.title}.`;
+    }
+    listItem.appendChild(document.createTextNode(text));
+    if (reference.url_doi) {
+      const link = document.createElement('a');
+      link.href = reference.url_doi;
+      listItem.appendChild(document.createTextNode(' '));
+      link.textContent = '[Link]';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      listItem.appendChild(link);
+    }
+    referenceList.appendChild(listItem);
   });
 
   const comparisonPairList = document.querySelector('#comparison-pair-list');
@@ -51,10 +74,12 @@ document.addEventListener('DOMContentLoaded', async function () { //JS startet e
     const listItem = document.createElement('li');
     const setLink = document.createElement('span');
     setLink.textContent = setId.replace('_set', '') //Entfernt "_set" aus dem set_id Wert --> nur noch "slice" und "cook"
+    if (setId === 'slice_set') { setLink.classList.add('active'); } //Erster Button beim Laden aktiv markieren
     listItem.appendChild(setLink); //Hinzufügen des Links zum Listenelement
     crossSetList.appendChild(listItem);
     listItem.addEventListener('click', function (event) {
-      //Event Listener für Klicks auf die Liste der Verb-Sets
+      crossSetList.querySelectorAll('span').forEach(function (s) { s.classList.remove('active'); }); //Aktiv-Markierung von allen Buttons entfernen
+      setLink.classList.add('active'); //Aktiv-Markierung auf den angeklickten Button setzen
       if (setId === 'slice_set') {
         sliceSet.hidden = false; //Anzeigen des Slice-Sets
         cookSet.hidden = true; //Verstecken des Cook-Sets

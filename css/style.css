@@ -1,4 +1,56 @@
 /* ==================================================
+   0. Local Fonts
+   ================================================== */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../fonts/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ==================================================
    1. Design Tokens
    These are shared values we reuse throughout the file.
    ================================================== */
@@ -96,7 +148,8 @@ table {
 /* Give headings a clear rhythm and use the heading font role. */
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-heading);
   font-weight: 600;
   line-height: 1.25;
@@ -114,6 +167,10 @@ h2 {
 
 h3 {
   font-size: 1.125rem;
+}
+
+h4 {
+  font-size: 1rem;
 }
 
 p,
@@ -364,8 +421,7 @@ nav[aria-label="Verb sets"] li + li {
 .example-list,
 .cross-construction-list,
 .reference-list,
-.legend-list,
-.standalone-construction-list {
+.legend-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -393,8 +449,7 @@ nav[aria-label="Verb sets"] li + li {
 .example-list li,
 .cross-construction-list li,
 .reference-list li,
-.legend-list li,
-.standalone-construction-list li {
+.legend-list li {
   background: var(--surface);
   border: 1px solid var(--border);
   padding: 1rem;
@@ -403,8 +458,7 @@ nav[aria-label="Verb sets"] li + li {
 
 .entry-point-card a,
 .construction-card a,
-.detail-link-list a,
-.standalone-construction-list a {
+.detail-link-list a {
   text-decoration: none;
 }
 
@@ -413,7 +467,6 @@ nav[aria-label="Verb sets"] li + li {
 .construction-card:hover,
 .detail-link-list li:hover,
 .comparison-pair-list li:hover,
-.standalone-construction-list li:hover,
 nav[aria-label="Verb sets"] a:hover {
   border-color: var(--accent);
 }
@@ -431,7 +484,7 @@ nav[aria-label="Verb sets"] a:hover {
   color: var(--text-secondary);
 }
 
-.construction-card h3,
+.construction-card h4,
 .entry-point-card a {
   margin-bottom: 0.5rem;
 }
@@ -440,8 +493,7 @@ nav[aria-label="Verb sets"] a:hover {
 .example-list,
 .cross-construction-list,
 .reference-list,
-.legend-list,
-.standalone-construction-list {
+.legend-list {
   display: grid;
   gap: 0.75rem;
 }
@@ -452,7 +504,6 @@ nav[aria-label="Verb sets"] a:hover {
 .cross-construction-list li + li,
 .reference-list li + li,
 .legend-list li + li,
-.standalone-construction-list li + li,
 .construction-card-list li + li,
 .entry-point-list li + li {
   margin-top: 0;
@@ -464,8 +515,8 @@ nav[aria-label="Verb sets"] a:hover {
    ================================================== */
 
 /* Section headings in the construction areas get a divider for clearer hierarchy. */
-#construction-index > section h2,
-#construction-detail article h2 {
+#construction-index > section h3,
+#construction-detail article h3 {
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
 }
@@ -535,11 +586,11 @@ nav[aria-label="Verb sets"] a:hover {
   margin-top: 0;
 }
 
-#construction-detail article[id^="detail-"] h2 {
+#construction-detail article[id^="detail-"] h3 {
   margin-bottom: 1rem;
 }
 
-#construction-detail article[id^="detail-"] h3 {
+#construction-detail article[id^="detail-"] h4 {
   margin-top: 1.5rem;
 }
 
@@ -621,34 +672,38 @@ nav[aria-label="Verb sets"] a:hover {
    Styles for the set navigation and tables.
    ================================================== */
 
-/* The set-switching links should feel more intentional than plain text links. */
+/* The set-switching buttons use the same dark-violet style as the primary navigation. */
 nav[aria-label="Verb sets"] ul {
   margin-bottom: 1rem;
 }
 
-nav[aria-label="Verb sets"] a {
+nav[aria-label="Verb sets"] li span {
   display: inline-block;
-  padding: 0.5rem 0.9rem;
-  border: 1px solid var(--border);
+  padding: 0.5rem 1.1rem;
   background: var(--surface);
-  text-decoration: none;
-  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+  color: var(--text-secondary);
   border-radius: 999px;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-nav[aria-label="Verb sets"] a[aria-current="true"] {
-  background: #ffe8c0;
-  border-color: var(--accent);
-  color: var(--accent);
+nav[aria-label="Verb sets"] li span:hover {
+  border-color: #2e1a6e;
+  color: #2e1a6e;
+}
+
+nav[aria-label="Verb sets"] li span.active {
+  background: #2e1a6e;
+  border-color: #2e1a6e;
+  color: #ffffff;
   font-weight: 600;
 }
 
-nav[aria-label="Verb sets"] a:focus-visible,
 .entry-point-card a:focus-visible,
 .construction-card a:focus-visible,
 .detail-link-list a:focus-visible,
-.comparison-pair-list a:focus-visible,
-.standalone-construction-list a:focus-visible {
+.comparison-pair-list a:focus-visible {
   outline: 3px solid var(--focus-ring);
   outline-offset: 3px;
 }
@@ -740,9 +795,18 @@ nav[aria-label="Verb sets"] a:focus-visible,
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
-#inheritance-network .legend-list li,
-#inheritance-network .standalone-construction-list li {
+#inheritance-network .legend-list li {
   background: var(--surface);
+}
+
+#inheritance-network .legend-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.legend-line-sample {
+  flex-shrink: 0;
 }
 
 /* Even before the graph exists, the placeholder should look like a dedicated canvas. */
@@ -754,68 +818,6 @@ nav[aria-label="Verb sets"] a:focus-visible,
   overflow-x: auto;
 }
 
-#inheritance-graph svg {
-  width: 100%;
-  height: auto;
-}
-
-.inheritance-arrow {
-  fill: #9baab8;
-}
-
-.inheritance-edge {
-  stroke: #9baab8;
-  stroke-width: 2.5;
-}
-
-.instance-edge {
-  stroke-dasharray: none;
-}
-
-.metaphorical-edge {
-  stroke: #c47820;
-  stroke-dasharray: 7 5;
-}
-
-.discourse-edge {
-  stroke: #89a88a;
-  stroke-dasharray: 2 5;
-}
-
-.inheritance-node circle {
-  stroke: var(--border);
-  stroke-width: 2;
-}
-
-.inheritance-node text {
-  fill: var(--text-primary);
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-}
-
-.inheritance-node-link {
-  text-decoration: none;
-}
-
-.cluster-argument_structure circle {
-  fill: var(--argument-structure-tint);
-}
-
-.cluster-motion_activity circle {
-  fill: var(--motion-activity-tint);
-}
-
-.cluster-fixed_pragmatic circle {
-  fill: var(--fixed-pragmatic-tint);
-}
-
-.cluster-clause_combining circle {
-  fill: var(--clause-combining-tint);
-}
-
-.cluster-np_internal circle {
-  fill: var(--np-internal-tint);
-}
 
 /* ==================================================
    10. Responsive Rules

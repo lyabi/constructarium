@@ -58,6 +58,39 @@ A new `app.js` was written step by step, learning each concept before moving to 
 
 Documented the concept and structure of `app.js` in `docs/app-concept.md`.
 
+## 20.06.2026
+**Inheritance Network graph implemented.**
+
+**Data fixes in `constructarium_inheritance.json`:**
+- Clarified two-system edge naming convention: `parent`/`child` for strictly hierarchical relations (instance, metaphorical_extension); `source`/`target` for non-hierarchical relations (construal_variant, related_to, subpart, polysemy, motivates).
+- Fixed one `instance` edge (ditransitive_cxn → ditransitive_transfer_cxn) that was incorrectly using `source`/`target`.
+- Removed the `related_to` edge from `intransitive_cxn` → `caused_motion_cxn`, which created a cycle incompatible with the DAG requirement.
+- Added four ditransitive sub-sense nodes: `ditransitive_transfer_cxn`, `ditransitive_enablement_cxn`, `ditransitive_promise_cxn`, `ditransitive_refusal_cxn`.
+
+**Four matching entries added to `constructarium_constructions.json`** so all graph nodes resolve to human-readable names.
+
+**New file `js/graph.js`** implements the interactive inheritance graph using Cytoscape.js with the dagre layout plugin (loaded via CDN). Key steps:
+- Loads `constructarium_inheritance.json` and `constructarium_constructions.json` via the `loadJSON()` helper.
+- Normalises `parent`/`child` edge fields to `source`/`target` in JavaScript before passing data to Cytoscape.
+- Generates a unique edge ID from the normalised source, target, and relation. This fixed duplicate IDs caused by the previous fallback expression, which could make Cytoscape omit edges.
+- Resolves node IDs to human-readable names via `.find()` on `constructions`.
+- Renders nodes as rounded rectangles with cluster-coloured backgrounds matching the design palette.
+- Replaced the initial `breadthfirst` layout with dagre so the inheritance structure is displayed as a layered 2D hierarchy. The layout runs top-to-bottom, with `rankSep` and `nodeSep` set for readable spacing.
+- Increased node dimensions and enabled label-aware layout calculations. Long construction names now wrap inside the nodes, remain horizontally and vertically centred, and no longer overlap neighbouring labels.
+- Tested the graph through a local web server; the project can be run with the Python HTTP server or VS Code Live Server as documented in `README.md`.
+
+**Graph styling in `css/style.css`:**
+- Increased the graph container height from a minimum of 220px to a fixed 500px so the multi-level hierarchy has enough vertical space.
+
+**`index.html` additions:**
+- CDN script tags for cytoscape, dagre, and cytoscape-dagre added before `app.js`.
+- Added `<script src="js/graph.js"></script>`.
+- Added a "Senses" section to the Ditransitive Construction detail block, listing all four senses (Transfer, Enablement, Promise, Refusal) with examples and references from Goldberg 1995.
+
+**Minor `app.js` improvements:**
+- Introduced a `loadJSON(file_path)` helper function, replacing five repetitive fetch/parse pairs with single-line calls.
+- Changed the verb-set link element from `<a>` to `<span>` to accurately reflect its role.
+
 ## 15.05.2026
 **Visual redesign.** Replaced the warm-academic aesthetic with a cleaner, more modern look:
 - **Colour palette:** warm off-white and brown tones replaced with cool lavender-neutral background (`#F5F4F8`) and violet-tinted border/text colours. Cluster colours updated to accessible pastels (blue, green, rose, violet, amber) with richer accent shades for headings and borders (all WCAG AA compliant). Dark amber (`#B06000`) as the interactive accent throughout.
