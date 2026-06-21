@@ -36,7 +36,9 @@ document.addEventListener('DOMContentLoaded', async function () {
             rankDir: 'TB',
             rankSep: 80,
             nodeSep: 50,
-            nodeDimensionsIncludeLabels: true
+            nodeDimensionsIncludeLabels: true,
+            minZoom: 0.3,
+            maxZoom: 2.5,
         },
         style: [
             {

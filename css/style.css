@@ -109,13 +109,13 @@ body {
 /* When anchor links jump to a section or article, leave a little breathing room at the top. */
 section,
 article {
-  scroll-margin-top: 1rem;
+  scroll-margin-top: 4.5rem;
 }
 
 /* Keep the main page content centered and readable. */
 main,
 footer {
-  width: min(1200px, calc(100% - 2rem));
+  width: min(100% - 1rem, 1200px);
   margin: 0 auto;
 }
 
@@ -292,8 +292,7 @@ caption {
 
 th,
 td {
-  /* padding adds space inside each cell, between the text and the border */
-  padding: 0.75rem;
+  padding: 0.6rem;
   border: 1px solid var(--border);
   text-align: left;
   vertical-align: top;
@@ -326,12 +325,12 @@ main > section:first-child {
 
 /* Site-wide nav styles the top navigation across the whole page. */
 header nav[aria-label="Primary"] {
-  /* display: flex puts the wordmark and nav list on one row */
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.125rem 1.5rem;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -356,10 +355,9 @@ header nav[aria-label="Primary"] a:hover {
 }
 
 header nav[aria-label="Primary"] ul {
-  /* flex-wrap lets the nav break onto a new line instead of overflowing on smaller screens */
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 1rem 2rem;
   margin: 0;
   padding: 0;
@@ -375,7 +373,7 @@ header nav[aria-label="Primary"] li + li {
 /* Main sections become white content panels on the warm background. */
 main > section {
   background: var(--surface);
-  padding: 2rem;
+  padding: 1.25rem;
   margin-top: 1.5rem;
   border: 1px solid var(--border);
 }
@@ -393,6 +391,40 @@ a:hover {
 a:focus-visible {
   outline: 3px solid var(--focus-ring);
   outline-offset: 3px;
+}
+
+/* Hamburger toggle button — three stacked lines that animate to an X when open. */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 2px;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Secondary nav for the Verb Explorer. */
@@ -434,13 +466,6 @@ nav[aria-label="Verb sets"] li + li {
   gap: 1rem;
 }
 
-.entry-point-list {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.construction-card-list {
-  grid-template-columns: repeat(3, 1fr);
-}
 
 /* Repeated content blocks share the same card-like surface treatment. */
 .entry-point-card,
@@ -596,7 +621,6 @@ nav[aria-label="Verb sets"] a:hover {
 
 /* The quick links at the top of the detail section act like a local navigation menu. */
 .detail-link-list {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   margin-bottom: 1.5rem;
 }
 
@@ -607,9 +631,7 @@ nav[aria-label="Verb sets"] a:hover {
 
 /* The comparison page has a sidebar plus a main content panel. */
 .comparison-layout {
-  /* First column = pair list, second column = selected comparison content */
   display: grid;
-  grid-template-columns: minmax(220px, 280px) 1fr;
   gap: 1.5rem;
   align-items: start;
 }
@@ -648,9 +670,7 @@ nav[aria-label="Verb sets"] a:hover {
 }
 
 .comparison-sentences {
-  /* The two compared constructions sit side by side before we do a mobile-specific pass later. */
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -718,6 +738,9 @@ nav[aria-label="Verb sets"] li span.active {
 }
 
 #verb-explorer table {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin-bottom: 2rem;
 }
 
@@ -730,9 +753,8 @@ nav[aria-label="Verb sets"] li span.active {
   background: var(--surface);
 }
 
-/* Give the sentence column a bit more space because it usually contains the longest text. */
 #verb-explorer td:first-child {
-  width: 50%;
+  width: auto;
 }
 
 /* Annotation notes in Verb Explorer should read as secondary information beneath the sentence. */
@@ -751,6 +773,11 @@ nav[aria-label="Verb sets"] li span.active {
 #home > p,
 #inheritance-network > p {
   max-width: 65ch;
+}
+
+#about-sources p {
+  text-align: justify;
+  hyphens: auto;
 }
 
 /* Home navigation pills: a row of violet pills replacing the card grid. */
@@ -791,10 +818,6 @@ nav[aria-label="Verb sets"] li span.active {
   border-radius: 0.25rem;
 }
 
-#inheritance-network .legend-list {
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-}
-
 #inheritance-network .legend-list li {
   background: var(--surface);
 }
@@ -821,62 +844,89 @@ nav[aria-label="Verb sets"] li span.active {
 
 /* ==================================================
    10. Responsive Rules
-   These rules adjust the layout on smaller screens.
+   Mobile-first: the base styles above target small screens.
+   These queries progressively enhance the layout for wider screens.
    ================================================== */
 
-/* @media means: only apply these rules when the screen is at or below a certain width. */
-/* We add responsive changes after the main layout is established. */
-@media (max-width: 900px) {
-  main {
-    width: min(100% - 1rem, 1200px);
+@media (min-width: 680px) {
+  main > section {
+    padding: 2rem;
   }
 
-  /* Stack the main nav when horizontal space gets tighter. */
-  header nav[aria-label="Primary"] {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 0.75rem 1rem;
+  .comparison-sentences {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  header nav[aria-label="Primary"] ul {
-    justify-content: flex-start;
+  .entry-point-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Comparison shifts to one column so the sidebar doesn't squeeze the main content. */
-  .comparison-layout {
-    grid-template-columns: 1fr;
-  }
-
-  /* Cards can become narrower here without hurting readability. */
   .construction-card-list {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-@media (max-width: 680px) {
-  main > section {
-    padding: 1.25rem;
+  .detail-link-list {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
-  /* The compared constructions stack vertically on smaller screens, per the fallback requirement. */
-  .comparison-sentences {
-    grid-template-columns: 1fr;
-  }
-
-  .entry-point-list,
-  .construction-card-list,
-  .detail-link-list,
   #inheritance-network .legend-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
 
-  /* Tables are still tables, but smaller padding helps them fit better on narrow screens. */
   th,
   td {
-    padding: 0.6rem;
+    padding: 0.75rem;
   }
 
   #verb-explorer td:first-child {
-    width: auto;
+    width: 50%;
+  }
+}
+
+@media (min-width: 900px) {
+  main,
+  footer {
+    width: min(1200px, calc(100% - 2rem));
+  }
+
+  header nav[aria-label="Primary"] {
+    flex-direction: row;
+    align-items: center;
+    padding: 1.125rem 1.5rem;
+  }
+
+  header nav[aria-label="Primary"] ul {
+    justify-content: flex-end;
+  }
+
+  .comparison-layout {
+    grid-template-columns: minmax(220px, 280px) 1fr;
+  }
+
+  .entry-point-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .construction-card-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+}
+
+/* Hamburger: nav list hidden on mobile, shown when .nav-open is toggled by JS. */
+@media (max-width: 899px) {
+  #primary-nav-list {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 0.25rem;
+  }
+
+  #primary-nav-list.nav-open {
+    display: flex;
   }
 }

@@ -100,3 +100,21 @@ Documented the concept and structure of `app.js` in `docs/app-concept.md`.
 - **Home entry points:** "Explore the Project" cards replaced with pill-shaped navigation buttons (violet fill, white text, amber on hover) in a flex row.
 - **Scroll behaviour:** removed `scroll-behavior: smooth`; anchor links now jump instantly.
 
+## 21.06.2026
+**CSS rewritten mobile-first. References fixed and expanded.**
+
+`css/style.css` was restructured so that all base styles target mobile viewports first, with `min-width` media queries progressively widening the layout. This replaces the previous approach where desktop styles were the default and small screens were overrides.
+
+**Reference fixes in `app.js` and `index.html`:**
+- Corrected formatting of rendered reference entries (author, year, title, source now display consistently).
+- Expanded the reference list in `constructarium_references.json` to cover all sources cited in the newly added Ditransitive senses section.
+- Inline citations in `index.html` updated to match the expanded reference data.
+
+**Two navigation fixes:**
+- `scroll-margin-top` on `section` and `article` increased from `1rem` to `4.5rem` so that anchor links no longer land underneath the sticky header.
+- Mobile menu now closes automatically when a nav link is clicked: `app.js` selects all `<a>` elements inside `#primary-nav-list` with `querySelectorAll` and attaches a click listener to each that removes the `nav-open` class and resets `aria-expanded` to `"false"`.
+
+**Mobile improvements to the inheritance graph:**
+- `#inheritance-graph` in `css/style.css`: base height reduced to `250px` (mobile), overridden to `500px` inside the `min-width: 680px` media query. Cytoscape renders to a canvas, so horizontal scrolling is not possible — a shorter container is more appropriate for small screens.
+- `js/graph.js`: Added `minZoom: 0.3` and `maxZoom: 2.5` to the Cytoscape configuration. This allows users to zoom out far enough to see the full graph on small screens and zoom in to read labels.
+

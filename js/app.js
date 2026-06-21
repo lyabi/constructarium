@@ -1,3 +1,25 @@
+// Hamburger-Navigation: Button und Nav-Liste aus dem DOM holen
+const navToggle = document.querySelector('.nav-toggle'); // der <button class="nav-toggle">
+const primaryNavList = document.getElementById('primary-nav-list'); // die <ul id="primary-nav-list">
+const navLinks = primaryNavList.querySelectorAll('a'); // alle <a> Links innerhalb der Nav-Liste
+
+// Beim Klick auf den Button die Nav-Liste ein- oder ausblenden
+navToggle.addEventListener('click', function () {
+  // toggle() fügt die Klasse hinzu, wenn sie fehlt, und entfernt sie, wenn sie da ist
+  // Der Rückgabewert ist true (Klasse wurde hinzugefügt) oder false (Klasse wurde entfernt)
+  const isOpen = primaryNavList.classList.toggle('nav-open');
+  // aria-expanded sagt Screenreadern, ob das Menü gerade offen ist
+  navToggle.setAttribute('aria-expanded', String(isOpen)); // String() wandelt true/false in "true"/"false" um
+});
+
+// Damit die Navigation bei mobilen Geräten wieder verschwindet
+navLinks.forEach(function(link) {
+  link.addEventListener('click', function() {
+    primaryNavList.classList.remove('nav-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
 document.addEventListener('DOMContentLoaded', async function () { //JS startet erst, wenn die HTML Seite vollständig geladen ist
   async function loadJSON(file_path) {
     const response = await fetch(file_path);
