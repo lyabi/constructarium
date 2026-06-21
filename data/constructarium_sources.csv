@@ -1,18 +1,13 @@
-﻿construction_id;author;year;title;type;url_doi
-intransitive_cxn;Hoffmann, T. & G. Trousdale (eds.);2013;The Oxford Handbook of Construction Grammar;edited volume;
-transitive_cxn;Hoffmann, T. & G. Trousdale (eds.);2013;The Oxford Handbook of Construction Grammar;book;
-ditransitive_cxn;Goldberg, A.E.;1995;"Constructions: a construction grammar approach to argument
-structure";book;
-caused_motion_cxn;Goldberg, A.E.;1995;"Constructions: a construction grammar approach to argument
-structure";book;
-resultative_cxn;Goldberg, A.E.;1995;"Constructions: a construction grammar approach to argument
-structure";book;
-passive_cxn;Goldberg, A.E.;2005;Constructions at work: the nature of generalization in language;book;
-way_cxn;Goldberg, A.E.;1995;"Constructions: a construction grammar approach to argument
-structure";book;
-time_away_cxn;Jackendoff, R.;1997;Twistin' the Night Away;article;https://www.jstor.org/stable/415883
-wxdy_cxn;Kay, P. & Fillmore, C.T.;1999;"Grammatical Constructions and Linguistic Generalizations: The What's X Doing Y?
-Construction";article;http://www.jstor.org/stable/417472
-incredulity_cxn;Lambrecht, K.;1990;“What, me worry?” – ‘Mad Magazine Sentences’ Revisited;article;
-comparative_correlative_cxn;Hoffmann, T., Brunner, T. & Horsch, J.;2020;English comparative correlative constructions: a usage-based account;article;https://doi.org/10.1515/opli-2020-0012
-binominal_np_cxn;tenWolde, E.;2023;The English Binominal Noun Phrase: A Cognitive-Functional Approach;book;
+id;author;year;title;type;editors;book_title;publisher;place;journal;volume;issue;pages;url_doi
+croft_2007;Croft, W.;2007;Construction Grammar;chapter;"Geeraerts, D. & Cuykens, H. (eds.)";The Oxford Handbook of Cognitive Linguistics;Oxford University Press;Oxford;;;;;
+davies_2008;Davies, M.;2008–;The Corpus of Contemporary American English (COCA);corpus;;;;;;;;;;https://www.english-corpora.org/coca/
+goldberg_1995;Goldberg, A. E.;1995;Constructions: A Construction Grammar Approach to Argument Structure;book;;;University of Chicago Press;Chicago;;;;;
+goldberg_jackendoff_2004;Goldberg, A. E. & Jackendoff, R.;2004;The English resultative as a family of constructions;article;;;;;Language;80;3;532-568;
+goldberg_2005;Goldberg, A. E.;2005;Constructions at Work: The Nature of Generalization in Language;book;;;Oxford University Press;Oxford;;;;;
+goldberg_2009;Goldberg, A. E.;2009;The nature of generalization in language;article;;;;;Cognitive Linguistics;20;1;93-127;
+hoffmann_et_al_2020;"Hoffmann, T., Brunner, T. & Horsch, J.";2020;English comparative correlative constructions: a usage-based account;article;;;;;Open Linguistics;6;1;196-215;https://doi.org/10.1515/opli-2020-0012
+hoffmann_trousdale_2013;Hoffmann, T. & Trousdale, G. (eds.);2013;The Oxford Handbook of Construction Grammar;edited volume;;;Oxford University Press;Oxford;;;;;
+jackendoff_1997;Jackendoff, R.;1997;Twistin' the Night Away;article;;;;;Language;73;3;534-559;https://www.jstor.org/stable/415883
+kay_fillmore_1999;Kay, P. & Fillmore, C. J.;1999;Grammatical Constructions and Linguistic Generalizations: The What's X Doing Y? Construction;article;;;;;Language;75;1;1-33;http://www.jstor.org/stable/417472
+lambrecht_1990;Lambrecht, K.;1990;'What, me worry?' – 'Mad Magazine Sentences' Revisited;proceedings;;;;;Proceedings of the Sixteenth Annual Meeting of the Berkeley Linguistics Society;;;215-228;
+tenwolde_2023;tenWolde, E.;2023;The English Binominal Noun Phrase: A Cognitive-Functional Approach;book;;;Cambridge University Press;;;;;;https://doi.org/10.1017/9781108921893

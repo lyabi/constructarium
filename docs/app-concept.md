@@ -20,4 +20,6 @@ Every section follows the same steps: select an existing HTML element → create
 
 ## Not yet implemented
 
-Construction Index cards, Construction Detail content, and the Inheritance Network graph are still static HTML or empty placeholders — not yet driven by JavaScript.
+Construction Index cards and Construction Detail content are still static HTML — not yet driven by JavaScript.
+
+The Inheritance Network is implemented in a separate file, `js/graph.js`, using Cytoscape.js with the dagre layout plugin. It is not part of `app.js`.

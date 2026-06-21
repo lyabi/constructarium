@@ -79,16 +79,15 @@ All data is JSON in `data/`. CSVs are archived originals, not read by the site. 
 ### 5. Inheritance Network
 
 **Must-have**
-- Interactive directed graph: 12 nodes, 7 edges
-- Edge style/colour encodes `relation`: `instance`, `metaphorical_extension`, `discourse_variant`
+- Interactive directed graph: 16 nodes, 17 edges — implemented via **Cytoscape.js** with the **dagre** layout plugin (top-to-bottom layered hierarchy)
+- Edge style/colour encodes `relation`: `instance`, `metaphorical_extension`, `construal_variant`, `subpart`, `polysemy`, `related_to`
 - Node labels show construction name; clicking navigates to detail page
 - Legend for relation types
-- **Must use a DAG-capable library** (D3-force, Cytoscape.js, or vis-network) — `resultative_cxn` has two parents; tree-layout components will break
-- **Layout strategy required for edgeless nodes — two distinct cases:**
-  - `intransitive_cxn`: edgeless but in the `argument_structure` cluster — position near other argument_structure nodes, grouped by cluster even without edges
-  - `wxdy_cxn`, `incredulity_cxn`, `comparative_correlative_cxn`, `binominal_np_cxn`: genuinely standalone — place in a dedicated peripheral zone or separate list below the main graph
+- **Layout strategy for edgeless nodes — two distinct cases:**
+  - `intransitive_cxn`: edgeless but in the `argument_structure` cluster — position near other argument_structure nodes
+  - `wxdy_cxn`, `incredulity_cxn`, `comparative_correlative_cxn`, `binominal_np_cxn`: genuinely standalone — dagre places them in a separate row
 
-**Nice-to-have:** node tooltip (`meaning_description`); edge tooltip (`notes`); cluster-based colouring; zoom/pan
+**Nice-to-have:** node tooltip (`meaning_description`); edge tooltip (`notes`); zoom/pan — zoom partially implemented (`minZoom: 0.3`, `maxZoom: 2.5`)
 
 ---
 
@@ -128,13 +127,14 @@ All data is JSON in `data/`. CSVs are archived originals, not read by the site. 
 
 ---
 
-## Open questions
+## Decisions made
 
-1. **Tech stack** — plain HTML/CSS/JS or framework (Svelte, Vue)? Affects routing and component structure.
-2. **Graph library** — D3-force, Cytoscape.js, or vis-network? Determines layout flexibility for isolated nodes.
-3. **Isolated node layout** — manual fixed positions, a dedicated visual zone, or a separate list below the graph?
-4. **Routing** — SPA with client-side routing vs. separate HTML pages? If SPA: shareable URLs per construction require explicit client-side routing. If separate HTML pages: shareable URLs come for free.
-5. **Deprofiled object** — "Pat cooks." is mapped to `intransitive_cxn` as a prototype workaround. A dedicated `deprofiled_object_cxn` may be warranted post-prototype.
-6. **Goldberg 2009 DOI** — missing from `references.json`; article is in *Cognitive Linguistics* 20(1), pp. 93–127.
-7. **BNC references** — ex_44–46 use BNC codes (e.g. `BNC W_newsp_brdsht AHC`). Display verbatim or humanise? Linkable?
-8. **Primary source label** — "Key reference" or "Source"? The field is one reference per construction, not a reading list.
+| Question | Decision |
+|---|---|
+| Tech stack | Plain HTML/CSS/JS — no framework |
+| Graph library | Cytoscape.js with dagre layout plugin |
+| Isolated node layout | Dagre places edgeless nodes in a bottom row automatically |
+| Routing | Single `index.html`; anchor links for navigation |
+| BNC references (ex_44–46) | Display `corpus_ref` verbatim (e.g. `BNC W_newsp_brdsht AHC`) |
+| Primary source label | "Key reference" |
+

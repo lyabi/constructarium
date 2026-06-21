@@ -6,15 +6,15 @@ Three typefaces, each with a distinct role:
 
 | Role | Font | Rationale |
 |---|---|---|
-| Headings, construction names | **Lora** (serif) | Warm, scholarly feel; signals academic context without being austere; works well at display sizes |
+| Headings, construction names | **Plus Jakarta Sans** (geometric sans-serif) | Clean, modern look at weight 600; works well at display sizes |
 | Body, UI elements, labels | **Inter** (sans-serif) | Maximum legibility for dense technical content; neutral; excellent at small sizes |
 | Linguistic notation | **JetBrains Mono** (monospace) | Applied to all `phrase_structure` and `syntactic_function` values (e.g. `NP V NP PP`); monospace evokes formal notation and visually separates formulae from prose |
 
-All three are available on Google Fonts. Use **Lora** for page titles, section headers, and construction names. Use **Inter** for everything else. Use **JetBrains Mono** exclusively for linguistic notation — never for general text.
+All three are loaded as local variable fonts from `fonts/`. Use **Plus Jakarta Sans** for page titles, section headers, and construction names. Use **Inter** for everything else. Use **JetBrains Mono** exclusively for linguistic notation — never for general text.
 
 Font sizes (base 16px):
-- Page title: 2rem, Lora, regular
-- Section heading: 1.25rem, Lora, regular
+- Page title: 2rem, Plus Jakarta Sans, weight 600
+- Section heading: 1.25rem, Plus Jakarta Sans, weight 600
 - Body: 1rem, Inter, regular
 - Small label / metadata: 0.875rem, Inter, regular
 - Notation: 0.9rem, JetBrains Mono
@@ -27,56 +27,64 @@ Font sizes (base 16px):
 
 | Token | Hex | Use |
 |---|---|---|
-| `--bg` | `#F5F3EE` | Page background (warm off-white, paper-like) |
-| `--surface` | `#FFFFFF` | Cards, panels, modals |
-| `--text-primary` | `#1C1B18` | Main body text |
-| `--text-secondary` | `#6B6860` | Labels, metadata, de-emphasised content |
-| `--border` | `#E4E0D8` | Card borders, dividers |
+| `--bg` | `#F5F4F8` | Page background (cool lavender-neutral) |
+| `--surface` | `#FFFFFF` | Cards, panels |
+| `--text-primary` | `#1C1B22` | Main body text |
+| `--text-secondary` | `#6B6878` | Labels, metadata, de-emphasised content |
+| `--border` | `#E2DFF0` | Card borders, dividers |
+| `--accent` | `#B06000` | Interactive accent (dark amber) — links, buttons, hover states |
+
+### Header
+
+Full-width sticky violet bar (`#2E1A6E`). White wordmark (weight 700) and white nav items (88% opacity). Hover turns links to light amber (`--accent`). Nav items are not underlined.
 
 ### Cluster colours
 
-Used consistently for construction cards (Construction Index), construction name headers (Construction Detail), and nodes (Inheritance Network). Muted tones — no fully saturated colours.
+Each cluster has an **accent** colour (used for borders, text, and graph nodes) and a **tint** (used as card background fill).
 
-| Cluster | Hex | Use case |
-|---|---|---|
-| `argument_structure` | `#3D6B9F` | Slate blue — central, largest cluster |
-| `motion_activity` | `#5C8C6E` | Sage green |
-| `fixed_pragmatic` | `#B85C3A` | Terracotta |
-| `clause_combining` | `#7A5C9E` | Muted purple |
-| `np_internal` | `#A07830` | Amber/ochre |
+| Cluster | Accent | Tint | Description |
+|---|---|---|---|
+| `argument_structure` | `#1A5FA8` | `#DDEEFF` | Slate blue |
+| `motion_activity` | `#1A7040` | `#D6F0E3` | Forest green |
+| `fixed_pragmatic` | `#B82055` | `#FFDCE8` | Rose/crimson |
+| `clause_combining` | `#6030A0` | `#EAD9FF` | Violet |
+| `np_internal` | `#8A5500` | `#FFF0CC` | Amber/ochre |
 
-Cluster colours appear as:
-- Left border stripe on construction cards (Construction Index)
-- Header background tint on Construction Detail pages
+Cluster accent colours appear as:
+- 4px left border stripe on construction cards (Construction Index)
+- Accent text/border on Construction Detail headers
 - Node fill colour in Inheritance Network
+
+Tint colours appear as the full background of construction cards.
 
 ### Inheritance edge colours
 
 | Relation | Hex | Style |
 |---|---|---|
-| `instance` | `#9BAAB8` | Solid line |
-| `metaphorical_extension` | `#C4905A` | Dashed line |
-| `discourse_variant` | `#89A88A` | Dotted line |
+| `instance` | `#9BAAB8` | Solid line (default) |
+| `metaphorical_extension` | `#C47820` | Long dashes |
+| `construal_variant` | `#89A88A` | Medium dashes |
+| `related_to` | `#2D3FB8` | Short dashes |
+| `subpart` | `#6030A0` | Long dashes (wider gap) |
+| `polysemy` | `#B82055` | Dash-dot pattern |
 
 ---
 
 ## Navigation
 
-Fixed horizontal top bar, present on all pages.
+Full-width sticky bar in deep violet (`#2E1A6E`), present on all pages.
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
-│  Constructarium    Constructions   Compare   Inheritance          │
+│  Constructarium    Constructions   Compare   Inheritance          │  ← violet bg
 │                    Verb Explorer   About                          │
 └──────────────────────────────────────────────────────────────────┘
 ```
 
-- **Logo/wordmark** left-aligned, links to Home; set in Lora
-- **5 nav items** right-aligned: Constructions, Compare, Inheritance, Verb Explorer, About
-- Compare is the core feature — consider a subtle visual marker (e.g. slightly bolder weight or a small dot indicator)
-- Active page underlined or highlighted with a bottom border in cluster-neutral accent
-- Thin `--border` line separates nav from content
-- No dropdown menus — all destinations are top-level pages
+- **Logo/wordmark** left-aligned, links to Home; set in Plus Jakarta Sans, weight 700, white
+- **5 nav items** right-aligned: Constructions, Compare, Inheritance, Verb Explorer, About — white at 88% opacity; hover turns to light amber
+- Nav items are not underlined; no dropdown menus
+- On mobile: hamburger toggle reveals a stacked nav list; clicking any nav link closes the menu automatically
 
 ---
 
@@ -95,15 +103,12 @@ Max content width: **1200px**, centred. Page background `--bg`, content on `--su
   An interactive tool for exploring English
   grammatical constructions.
 
-  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐
-  │ Compare  │  │Construc- │  │Inheritan-│  │  Verb    │
-  │ [primary]│  │  tions   │  │  ce      │  │ Explorer │
-  └──────────┘  └──────────┘  └──────────┘  └──────────┘
-  ↑ visually largest / most prominent card
+  [  Compare  ]  [  Constructions  ]  [  Inheritance  ]  [  Verb Explorer  ]
+  ↑ pill-shaped buttons (violet fill, white text, amber on hover)
 
 ```
 
-Four entry point cards in a row. Compare card is visually primary (larger, or with a distinct border). Clicking any card navigates to that page.
+Four pill-shaped navigation buttons in a flex row. Clicking any button navigates to that page. No card layout — the entry points are inline buttons, not separate panels.
 
 ---
 

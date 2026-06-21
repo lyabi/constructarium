@@ -834,7 +834,7 @@ nav[aria-label="Verb sets"] li span.active {
 
 /* Even before the graph exists, the placeholder should look like a dedicated canvas. */
 #inheritance-graph {
-  height: 500px;
+  height: 250px;
   padding: 1rem;
   border: 1px dashed var(--border);
   background: var(--surface);
@@ -881,6 +881,10 @@ nav[aria-label="Verb sets"] li span.active {
   #verb-explorer td:first-child {
     width: 50%;
   }
+
+  #inheritance-graph {
+  height: 500px;
+}
 }
 
 @media (min-width: 900px) {

@@ -1,6 +1,12 @@
-﻿set_id;verb;construction_id;sentence;source
-slice_set;slice;transitive_cxn;He sliced the bread.;Goldberg 2005
-slice_set;slice;caused_motion_cxn;Pat sliced the carrots into the salad.;Goldberg 2005
-slice_set;slice;ditransitive_cxn;Pat sliced Chris a piece of pie.;Goldberg 2005
-slice_set;slice;way_cxn;Emeril sliced and diced his way to stardom.;Goldberg 2005
-slice_set;slice;resultative_cxn;Pat sliced the box open.;Goldberg 2005
+set_id;verb;construction_id;sentence;annotation;source
+slice_set;slice;transitive_cxn;He sliced the bread.;;goldberg_2005
+slice_set;slice;caused_motion_cxn;Pat sliced the carrots into the salad.;;goldberg_2005
+slice_set;slice;ditransitive_cxn;Pat sliced Chris a piece of pie.;;goldberg_2005
+slice_set;slice;way_cxn;Emeril sliced and diced his way to stardom.;;goldberg_2005
+slice_set;slice;resultative_cxn;Pat sliced the box open.;;goldberg_2005
+cook_set;cook;intransitive_cxn;The chicken cooked all night.;;goldberg_2009
+cook_set;cook;transitive_cxn;Pat cooked the steaks.;;goldberg_2009
+cook_set;cook;resultative_cxn;Pat cooked the steak well done.;;goldberg_2009
+cook_set;cook;intransitive_cxn;Pat cooks.;"deprofiled object; verb is semantically transitive but object is implicit";goldberg_2009
+cook_set;cook;ditransitive_cxn;Pat cooked Chris some dinner.;;goldberg_2009
+cook_set;cook;way_cxn;Pat cooked her way into the Illinois State bake-off.;;goldberg_2009

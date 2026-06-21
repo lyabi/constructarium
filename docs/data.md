@@ -74,15 +74,22 @@ All `source` fields across files are reference IDs that resolve to `constructari
 ### `constructarium_inheritance.json`
 Directed graph encoding constructional inheritance relations. Created directly as JSON — no CSV origin.
 
-**Nodes** (12): each has `id` and `cluster` (argument_structure / motion_activity / fixed_pragmatic / clause_combining / np_internal).
+**Nodes** (16): each has `id` and `cluster`. The original 12 constructions plus four ditransitive sub-sense nodes added to reflect Goldberg's (1995) sense network: `ditransitive_transfer_cxn`, `ditransitive_enablement_cxn`, `ditransitive_promise_cxn`, `ditransitive_refusal_cxn`.
 
-**Edges** (7): each has `parent`, `child`, `relation`, and `notes`.
+**Edges** (17): two naming conventions are used depending on relation type.
+- Strictly hierarchical relations (`instance`, `metaphorical_extension`): fields are `parent` and `child`.
+- Non-hierarchical relations (`construal_variant`, `related_to`, `subpart`, `polysemy`): fields are `source` and `target`.
 
-| Relation type | Meaning |
-|---|---|
-| `instance` | Child is a more specific instance of the parent schema |
-| `metaphorical_extension` | Child extends parent via conceptual metaphor (CHANGE IS MOTION) |
-| `discourse_variant` | Child shares semantics of parent but differs in information structure |
+All edges also have `relation` and `notes` fields. JavaScript normalises `parent`/`child` to `source`/`target` before passing data to Cytoscape.
+
+| Relation type | Count | Meaning |
+|---|---|---|
+| `instance` | 6 | Child is a more specific instance of the parent schema |
+| `metaphorical_extension` | 1 | Child extends parent via conceptual metaphor (CHANGE IS MOTION) |
+| `construal_variant` | 1 | Shares semantics of parent but differs in information structure |
+| `subpart` | 4 | Child is a component or sub-sense of the parent |
+| `polysemy` | 3 | Nodes share a polysemy relation (sense network, not strict hierarchy) |
+| `related_to` | 2 | Loose associative relation between constructions |
 
 `resultative_cxn` has two incoming edges (from `transitive_cxn` as `instance` and from `caused_motion_cxn` as `metaphorical_extension`) — the graph is a DAG, not a tree.
 
