@@ -67,7 +67,7 @@ A new `app.js` was written step by step, learning each concept before moving to 
 
 Documented the concept and structure of `app.js` in `docs/app-concept.md`.
 
-## 20.06.2026
+## 19. & 20.06.2026
 **Inheritance Network graph implemented.**
 
 **Data fixes in `constructarium_inheritance.json`:**
@@ -137,4 +137,10 @@ Documented the concept and structure of `app.js` in `docs/app-concept.md`.
 
 *js/graph.js:*
 - Removed nav-toggle code that had been accidentally placed at the top of the file. It belonged in imprint.html (as an inline script) and would have attached a duplicate event listener to the hamburger button on `index.html`.
+
+**Accessibility documentation added to `tutorial/tutorial.md`.**
+New Section 3 documents all WCAG 2.1 AA decisions made in `index.html` and `css/style.css`, verified with WAVE. Covers: language declaration, semantic landmarks and heading hierarchy, skip link, navigation labelling and state (`aria-label`, `aria-expanded`, `aria-current`), keyboard focus styles (`:focus-visible`), ARIA labels and regions (`role="region"`), accessible table structure, decorative SVG (`aria-hidden`), hidden content (`hidden` attribute), and colour contrast choices.
+
+**Placeholder messages removed from `index.html`.**
+Eight instances of `"No guided contrast pair is currently defined for this construction."`, five instances of `"No parent or child edges are listed in the current inheritance data."`, and five empty `<h4>Inheritance</h4>` headings (where no inheritance data existed) were removed from the construction detail articles.
 

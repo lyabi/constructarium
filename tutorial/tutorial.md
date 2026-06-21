@@ -31,6 +31,17 @@ This document walks through every line of `index.html` and `css/style.css` so yo
    - [Section 8 — Verb Explorer](#28-section-8--verb-explorer)
    - [Section 9 — Home and Inheritance Sections](#29-section-9--home-and-inheritance-sections)
    - [Section 10 — Responsive Rules](#210-section-10--responsive-rules)
+3. [Accessibility](#3-accessibility)
+   - [Language and page identity](#31-language-and-page-identity)
+   - [Semantic landmarks and heading hierarchy](#32-semantic-landmarks-and-heading-hierarchy)
+   - [Skip link](#33-skip-link)
+   - [Navigation: labelling and state](#34-navigation-labelling-and-state)
+   - [Keyboard focus styles](#35-keyboard-focus-styles)
+   - [ARIA labels and regions](#36-aria-labels-and-regions)
+   - [Tables](#37-tables)
+   - [Decorative SVG](#38-decorative-svg)
+   - [Hidden content](#39-hidden-content)
+   - [Colour contrast](#310-colour-contrast)
 
 ---
 
@@ -1337,4 +1348,221 @@ This is the one `max-width` rule in the stylesheet. On screens narrower than 900
 
 ---
 
-*End of tutorial. Last updated June 2026 (major revision: local fonts via `@font-face`, sticky dark-purple header, mobile-first responsive approach, Plus Jakarta Sans heading font, cluster tint card backgrounds, hamburger navigation with animated × toggle, updated heading hierarchy h1–h4, six-type inheritance legend with inline SVG samples, entry-point pills, Cytoscape + dagre graph library scripts; accessibility fixes: comparison pair active state via `li[aria-current="true"]`, keyboard support for comparison pairs and verb-set tabs, hamburger navigation and footer added to imprint.html; footer uses plain `<span>` instead of `<a>` to avoid a redundant link alongside the header wordmark).*
+*End of tutorial. Last updated June 2026 (major revision: local fonts via `@font-face`, sticky dark-purple header, mobile-first responsive approach, Plus Jakarta Sans heading font, cluster tint card backgrounds, hamburger navigation with animated × toggle, updated heading hierarchy h1–h4, six-type inheritance legend with inline SVG samples, entry-point pills, Cytoscape + dagre graph library scripts; accessibility fixes: comparison pair active state via `li[aria-current="true"]`, keyboard support for comparison pairs and verb-set tabs, hamburger navigation and footer added to imprint.html; footer uses plain `<span>` instead of `<a>` to avoid a redundant link alongside the header wordmark; added Section 3: Accessibility documenting all WCAG 2.1 AA decisions — language, landmarks, heading hierarchy, skip link, navigation labelling, keyboard focus styles, ARIA labels, tables, decorative SVG, hidden content, colour contrast; verified with WAVE).*
+
+---
+
+## 3. Accessibility
+
+Constructarium targets **WCAG 2.1 Level AA**. This means the site must be perceivable, operable, understandable, and robust for users who navigate with a keyboard, use a screen reader, or rely on high contrast and zoom. Compliance was verified with the **WAVE** browser extension, which flags missing labels, contrast errors, and structural problems. The decisions below are organised by the aspect of accessibility they address.
+
+---
+
+### 3.1 Language and page identity
+
+```html
+<html lang="en">
+```
+
+**`lang="en"`**
+Screen readers need to know what language the page is written in so they can choose the correct speech engine and pronunciation rules. Without `lang`, a German screen reader might read English words with German phonetics. This attribute satisfies WCAG 3.1.1 (Language of Page).
+
+The `<title>Constructarium</title>` element in the `<head>` gives the page an accessible name that screen readers announce when the page loads and that appears in the browser tab. This satisfies WCAG 2.4.2 (Page Titled).
+
+---
+
+### 3.2 Semantic landmarks and heading hierarchy
+
+```html
+<header> … </header>
+<nav aria-label="Primary"> … </nav>
+<main> … </main>
+<aside aria-labelledby="comparison-pairs-title"> … </aside>
+<footer> … </footer>
+```
+
+**Semantic landmark elements**
+HTML5 landmark elements (`<header>`, `<nav>`, `<main>`, `<aside>`, `<footer>`, `<section>`, `<article>`) carry built-in roles that screen readers expose in a landmark list. A screen reader user can jump directly to the main content, to the navigation, or to the footer without reading everything in between. Using `<div>` for these structures would remove that ability entirely.
+
+**The heading hierarchy**
+```html
+<h1>Constructarium</h1>          <!-- one per page -->
+  <h2>Construction Index</h2>
+    <h3>Argument Structure</h3>
+      <h4>Intransitive Construction</h4>
+```
+
+There is exactly one `<h1>` on the page, placed in the home section. Every major page section uses `<h2>`. Cluster headings inside the index use `<h3>`, and individual construction titles inside those clusters use `<h4>`. No heading level is skipped anywhere on the page. This matters because screen readers offer a "jump to next heading" shortcut, and users rely on the hierarchy to understand the document structure. A gap (e.g. jumping from `<h2>` to `<h4>`) would imply a missing level and confuse that navigation. This satisfies WCAG 1.3.1 (Info and Relationships) and WCAG 2.4.6 (Headings and Labels).
+
+**`aria-labelledby` on every section and article**
+```html
+<section id="construction-index" aria-labelledby="construction-index-title">
+  <h2 id="construction-index-title">Construction Index</h2>
+```
+
+Every `<section>` and `<article>` has `aria-labelledby` pointing to its heading. This connects the region to its name in the accessibility tree, so a screen reader announces "Construction Index, region" when the user navigates there, rather than just "region." The heading `id` exists solely for this purpose — it is not used for anchor navigation.
+
+---
+
+### 3.3 Skip link
+
+```html
+<a class="skip-link" href="#home">Skip to main content</a>
+```
+
+```css
+.skip-link {
+  position: absolute;
+  transform: translateY(-140%);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+```
+
+This is the first element in the document — before the header and navigation. A keyboard user who presses Tab will focus it immediately. Clicking or pressing Enter jumps directly to the `#home` section, bypassing the navigation bar.
+
+The link is invisible to mouse users because `transform: translateY(-140%)` moves it above the viewport. It is still in the DOM, which means screen readers and keyboards can reach it. When it receives focus, the transform is removed and it slides into view. This technique is preferred over `display: none` or `visibility: hidden`, both of which would remove the element from the focus order entirely.
+
+This satisfies WCAG 2.4.1 (Bypass Blocks), which requires a mechanism to skip repeated navigation on every page.
+
+---
+
+### 3.4 Navigation: labelling and state
+
+**Two `<nav>` elements with distinct labels**
+```html
+<nav aria-label="Primary"> … </nav>        <!-- header navigation -->
+<nav aria-label="Verb sets"> … </nav>       <!-- Verb Explorer tabs -->
+```
+
+The page contains two navigation regions. Without labels, a screen reader would announce "navigation" twice, giving the user no way to distinguish them. `aria-label` gives each nav an accessible name, so they are announced as "Primary navigation" and "Verb sets navigation." This satisfies WCAG 2.4.6 (Headings and Labels).
+
+**Hamburger button state**
+```html
+<button class="nav-toggle" aria-expanded="false" aria-label="Navigation öffnen">
+```
+
+`aria-expanded` communicates whether the navigation menu is currently open or closed. JavaScript updates this attribute between `"false"` and `"true"` every time the button is clicked. Without it, a screen reader user pressing the button would have no feedback about whether anything happened. `aria-label` gives the button its accessible name because the button contains only three empty `<span>` elements (the visual bars) and no readable text. This satisfies WCAG 4.1.2 (Name, Role, Value).
+
+**Active comparison pair**
+```css
+.comparison-pair-list li[aria-current="true"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+```
+
+When the user selects a comparison pair, JavaScript sets `aria-current="true"` on the active list item. This is both a visual signal (amber and bold) and a semantic one — screen readers announce the item as "current." This satisfies WCAG 4.1.2 (Name, Role, Value).
+
+---
+
+### 3.5 Keyboard focus styles
+
+```css
+a:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.entry-point-card a:focus-visible,
+.construction-card a:focus-visible,
+.detail-link-list a:focus-visible,
+.comparison-pair-list li:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+```
+
+**`:focus-visible` instead of `:focus`**
+`:focus-visible` is a CSS pseudo-class that the browser applies only when the element was reached by keyboard navigation, not by mouse click. Using `:focus` would show a visible outline every time a mouse user clicks a link, which is visually distracting. `:focus-visible` gives keyboard users a clear indicator while leaving the mouse experience unchanged.
+
+The focus ring is `3px solid #b06000` (the amber accent colour) with `3px offset`. The `outline` property is drawn outside the element's box, so it does not shift layout — unlike `border`, which would move surrounding content. The offset creates a small gap between the element edge and the ring, making the ring more legible on both light and dark backgrounds.
+
+This satisfies WCAG 2.4.7 (Focus Visible).
+
+---
+
+### 3.6 ARIA labels and regions
+
+**Named region for the inheritance graph**
+```html
+<div id="inheritance-graph" role="region" aria-label="Inheritance graph"></div>
+```
+
+The inheritance graph is a `<div>` container that Cytoscape.js fills with a canvas element at runtime. A plain `<div>` has no semantic role, so screen readers would ignore it or describe it without context. Adding `role="region"` promotes it to a named landmark, and `aria-label="Inheritance graph"` gives it an accessible name. Unlike most other regions on the page, there is no heading inside this `<div>`, so `aria-labelledby` cannot be used — `aria-label` is the correct alternative when there is no visible heading to reference. This satisfies WCAG 1.3.1 (Info and Relationships).
+
+---
+
+### 3.7 Tables
+
+```html
+<table>
+  <caption>Verb set entries for slice</caption>
+  <thead>
+    <tr>
+      <th scope="col">Sentence</th>
+      <th scope="col">Construction</th>
+      <th scope="col">Source</th>
+    </tr>
+  </thead>
+  <tbody id="slice-set-body"></tbody>
+</table>
+```
+
+The verb data is genuinely tabular — rows and columns with clear headers — so `<table>` is the correct element. Using a grid of `<div>` elements would look the same visually but strip all semantic structure.
+
+**`<caption>`** gives the table a visible title that is programmatically associated with it. Screen readers announce the caption before reading the table, so users know what they are about to hear.
+
+**`<th scope="col">`** explicitly declares that each header cell applies to the column below it. Without `scope`, screen readers have to guess whether a `<th>` is a row header or a column header, which can produce incorrect announcements. `scope="col"` removes all ambiguity.
+
+This satisfies WCAG 1.3.1 (Info and Relationships).
+
+---
+
+### 3.8 Decorative SVG
+
+```html
+<svg class="legend-line-sample" width="40" height="14" aria-hidden="true">
+  <line x1="2" y1="7" x2="38" y2="7" stroke="#9baab8" stroke-width="2.5"/>
+</svg>
+Instance
+```
+
+Each legend item shows a small SVG line sample followed by a text label. The SVG is purely decorative — the text label already conveys the meaning. Adding `aria-hidden="true"` tells screen readers to skip the SVG entirely. Without it, the screen reader would attempt to describe the SVG element, producing redundant or confusing output alongside the text label.
+
+This satisfies WCAG 1.1.1 (Non-text Content), which requires either a text alternative for meaningful images or `aria-hidden` for decorative ones.
+
+---
+
+### 3.9 Hidden content
+
+```html
+<section id="cook-set" aria-labelledby="cook-set-title" hidden>
+```
+
+The `hidden` attribute removes an element from rendering *and* from the accessibility tree. This is the correct technique for content that should be genuinely absent until activated — not just visually invisible. A screen reader navigating the page will not encounter the cook set until JavaScript removes the `hidden` attribute, at which point it becomes available exactly like any other section.
+
+This is preferable to `visibility: hidden` (which hides visually but may still be announced by some screen readers) and to `opacity: 0` (which hides visually but leaves the element fully interactive and accessible). This satisfies WCAG 1.3.1 (Info and Relationships) and WCAG 4.1.2 (Name, Role, Value).
+
+---
+
+### 3.10 Colour contrast
+
+WCAG 1.4.3 (Contrast Minimum) requires a contrast ratio of at least **4.5 : 1** for normal body text at Level AA.
+
+**Primary text**
+`--text-primary: #1c1b22` on `--bg: #f5f4f8` and `--surface: #ffffff` both meet and exceed this threshold. Near-black text on a near-white or white background is the most reliable contrast combination.
+
+**Secondary text**
+`--text-secondary: #6b6878` produces lower contrast on the coloured cluster card backgrounds. This is explicitly noted in the CSS with the comment: *"On coloured card backgrounds --text-secondary lacks contrast; use primary text colour."* Wherever secondary text appears on a coloured background, the rule is overridden to use `--text-primary` instead.
+
+**Navigation links**
+White (`#ffffff`) on the dark purple header (`#2e1a6e`) provides a contrast ratio well above 4.5 : 1. The hover state (`#ffe8c0`, pale warm gold) on the same purple background also maintains sufficient contrast.
+
+**Focus ring**
+The amber focus ring (`--focus-ring: #b06000`) on a white surface meets contrast requirements. Against the off-white background it is similarly legible.
+
+The entire page was verified with the **WAVE** accessibility evaluation tool, which found no contrast errors and no missing labels.
+
+---
